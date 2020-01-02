@@ -77,11 +77,11 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Thursday, 1/2| Project plan; Project approval | In Progress
-|Friday, 1/3| Pseudocode functionality; Core App Structure (HTML & CSS) | Incomplete
+|Thursday, 1/2| Project plan; Project approval | Completed
+|Friday, 1/3| Pseudocode functionality; Core App Structure (HTML & CSS) | In Progress
 |Monday, 1/6| Code fetching questions from API and record user answers | Incomplete
 |Tuesday, 1/7| Code functionality to track score; Code functionality to display final result | Incomplete
-|Wednesday, 1/8| Reset Game Button to restart; Completed MVP  | Incomplete
+|Wednesday, 1/8| Reset Game Button to restart; Finalize CSS with media queries; Completed MVP  | Incomplete
 |Thursday, 1/9| Present | Incomplete
 
 
@@ -101,7 +101,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 | Track Score | H | 4hrs | tbd | tbd |
 | Finish Game & Display Result | H | 3hrs | tbd | tbd |
 | Reset Game Function | M | 3hrs | tbd | tbd |
-| Additional Styling Effects (e.g. Animation) | L | 2hrs | tbd | tbd |
+| Additional Styling Effects (e.g. Animation, Responsive Media Queries) | L | 2hrs | tbd | tbd |
 | Total | H | 25hrs| tbd | tbd |
 
 
