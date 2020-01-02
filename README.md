@@ -45,22 +45,27 @@ A one-player trivia game that allows users to test their entertainment knowledge
 
 ## Wireframes
 
-Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
+https://wireframe.cc/pro/pp/84310c826302744 
 
-### MVP/PostMVP - 5min
-
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
+### MVP/PostMVP - 5min 
 
 #### MVP 
 
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- Allow user to choose a category (3 options)
+- Display question and answer choices
+- Track score - every correct answer is 1 point, every wrong answer earns 0 points
+- Display correct answer if the user answered wrong
+- Reset game option to start over
+
 
 #### PostMVP 
 
-- Add second API
-- Use local storage to save user favorites
+- Implement session token to not repeat questions if restarted
+- Local Storage to store questions and user answers
+- More categories to choose from (e.g. Books, Video Games, Sports, etc.)
+- Multi-player functionality - compete with another person
+- Choose a new category for each question turn 
+
 
 ## Project Schedule
 
@@ -70,13 +75,13 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Jan 2rd| Project Prompt | Incomplete
-|Jan 3rd| Wireframes / Priority Matrix / Functional Components | Incomplete
-|Jan 5th| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Jan 6th| Pseudocode / actual code | Incomplete
-|Jan 7th| Initial Clickable Model  | Incomplete
-|Jan 8th| MVP | Incomplete
-|Jan 9th| Present | Incomplete
+|Thursday, 1/2| Project plan; Project approval | In Progress
+|Friday, 1/3| Pseudocode functionality; Core App Structure (HTML & CSS) | Incomplete
+|Monday, 1/6| Code fetching questions from API and record user answers | Incomplete
+|Tuesday, 1/7| Code functionality to track score; Code functionality to display final result | Incomplete
+|Wednesday, 1/8| Completed MVP  | Incomplete
+|Thursday, 1/9| Present | Incomplete
+
 
 ## Priority Matrix
 
