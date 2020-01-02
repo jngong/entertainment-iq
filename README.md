@@ -12,6 +12,8 @@ A one-player trivia game that allows users to test their entertainment knowledge
 
 [Open Trivia DB](https://opentdb.com/api_config.php)
 
+### API Data Sample
+
 ```JSON
 {
     "response_code": 0,
@@ -89,24 +91,22 @@ Include a full list of features that have been prioritized based on the `Time an
 
 ## Timeframes
 
-Tell us how long you anticipate spending on each area of development. Be sure to consider how many hours a day you plan to be coding and how many days you have available until presentation day.
-
-## API Data Sample
-
-Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
-
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
-
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| HTML Structure | M | 1hr| tbd | tbd |
+| Basic CSS Styles | M | 2hrs| tbd | tbd |
+| Category Buttons | M | 2hrs | tbd | tbd |
+| API to Display Question and Randomize Position of Answer Choices | H | 4hrs | tbd | tbd |
+| Record User Answers - Evaluate Right/Wrong | H | 4hrs | tbd | tbd |
+| Track Score | H | 4hrs | tbd | tbd |
+| Finish Game & Display Result | H | 3hrs | tbd | tbd
+| Additional Styling Effects (e.g. Animation) | L | 2hrs | tbd | tbd |
+| Total | H | 22hrs| tbd | tbd |
 
 
 ## Code Snippet
 
+Pending:
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
 ```
@@ -116,4 +116,5 @@ function reverse(string) {
 ```
 
 ## Change Log
+ Pending:
  Use this section to document what changes were made and the reasoning behind those changes.  
