@@ -12,6 +12,37 @@ A one-player trivia game that allows users to test their entertainment knowledge
 
 [Open Trivia DB](https://opentdb.com/api_config.php)
 
+```JSON
+{
+    "response_code": 0,
+    "results": [
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "In the TV show &quot;Cheers&quot;, Sam Malone was a former relief pitcher for which baseball team?",
+            "correct_answer": "Boston Red Sox",
+            "incorrect_answers": [
+                "New York Mets",
+                "Baltimore Orioles",
+                "Milwaukee Brewers"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "In the TV show &#039;M*A*S*H&#039;, what was the nickname of Corporal Walter O&#039;Reilly?",
+            "correct_answer": "Radar",
+            "incorrect_answers": [
+                "Hawkeye",
+                "Hot Lips",
+                "Trapper"
+            ]
+        }
+
+```
+
 ## Wireframes
 
 Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
