@@ -87,7 +87,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 ## Priority Matrix
 
-![Priority Matrix](https://res.cloudinary.com/db0kbxvhr/image/upload/c_scale,w_600/v1577995137/JG-SEI-Project1-Priority-Matrix_y0niaa.jpg)
+![Priority Matrix](https://res.cloudinary.com/db0kbxvhr/image/upload/c_scale,w_500/v1577996310/Priority-Matrix_q44ll0.jpg)
 
 ## Timeframes
 
