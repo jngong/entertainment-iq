@@ -81,13 +81,11 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |Friday, 1/3| Pseudocode functionality; Core App Structure (HTML & CSS) | Incomplete
 |Monday, 1/6| Code fetching questions from API and record user answers | Incomplete
 |Tuesday, 1/7| Code functionality to track score; Code functionality to display final result | Incomplete
-|Wednesday, 1/8| Completed MVP  | Incomplete
+|Wednesday, 1/8| Reset Game Button to restart; Completed MVP  | Incomplete
 |Thursday, 1/9| Present | Incomplete
 
 
 ## Priority Matrix
-
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
 
 ![Priority Matrix](https://res.cloudinary.com/db0kbxvhr/image/upload/c_scale,w_600/v1577995137/JG-SEI-Project1-Priority-Matrix_y0niaa.jpg)
 
@@ -101,9 +99,10 @@ Include a full list of features that have been prioritized based on the `Time an
 | API to Display Question and Randomize Position of Answer Choices | H | 4hrs | tbd | tbd |
 | Record User Answers - Evaluate Right/Wrong | H | 4hrs | tbd | tbd |
 | Track Score | H | 4hrs | tbd | tbd |
-| Finish Game & Display Result | H | 3hrs | tbd | tbd
+| Finish Game & Display Result | H | 3hrs | tbd | tbd |
+| Reset Game Function | M | 3hrs | tbd | tbd |
 | Additional Styling Effects (e.g. Animation) | L | 2hrs | tbd | tbd |
-| Total | H | 22hrs| tbd | tbd |
+| Total | H | 25hrs| tbd | tbd |
 
 
 ## Code Snippet
