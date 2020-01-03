@@ -52,50 +52,68 @@ async function musicQuestions() {
 
 // first step is to hide category div and replace w/ question div
 function hideCategories() {
-    console.log(triviaQuestions)
-    console.log(triviaQuestions[0].correct_answer)
-    console.log(triviaQuestions[0].incorrect_answers)
     categoryContainer.style.display = 'none'
     questionContainer.style.display = 'block'
     playGame();
 }
 
-// Loop through each object to push the correct_answer value and the incorrect_answer values into a new property for that object.
-    // For multiple choice questions: each object has a key for correct_answer and a key for incorrect_answers which is another array.
+// For multiple choice questions: each object has a key for correct_answer and a key for incorrect_answers which is another array.
 function playGame() {
-    let answerContainer = document.querySelector('#answer-container')
-
-    let question = document.querySelector('#question')
-    question.innerHTML = triviaQuestions[0].question
-
-    let potentialAnswers = [];
-    potentialAnswers.push(triviaQuestions[0].correct_answer)
+    console.log(triviaQuestions)
     
-    triviaQuestions[0].incorrect_answers.forEach(element => {
-        potentialAnswers.push(element)
-      });
-
-    console.log(potentialAnswers)
-
-    potentialAnswers.forEach(element => {
-        let answerChoice = document.createElement('button')
-        answerChoice.setAttribute('class', 'answer')
-        answerChoice.innerHTML = `${element}`
-        answerContainer.appendChild(answerChoice)
-        answerChoice.addEventListener('click', checkAnswer)
-    })
-
-    function checkAnswer() {
-        let userAnswer = this.innerHTML;
-        if (userAnswer === triviaQuestions[0].correct_answer) {
-            console.log(`User clicked: ${userAnswer}. Correct answer is: ${triviaQuestions[0].correct_answer}`)
-            console.log(`You are correct.`)
-        } else {
-            console.log(`User clicked: ${userAnswer}. Correct answer is: ${triviaQuestions[0].correct_answer}`)
-            console.log(`You are wrong.`)
-        }
+    let answerContainer = document.querySelector('#answer-container')
+    let question = document.querySelector('#question')
+    
+        // Loop through each object to push the correct_answer value and the incorrect_answer values into a new property for that object.
+    for (let i = 0; i < triviaQuestions.length; i++) {
+        
+        let potentialAnswers = [];
+        potentialAnswers.push(triviaQuestions[i].correct_answer)
+        triviaQuestions[i].incorrect_answers.forEach(element => {
+            potentialAnswers.push(element)
+        });    
+        triviaQuestions[i].all_answers = potentialAnswers;
+        
+        console.log(`Q${i+1}: ${triviaQuestions[i].question}`)
+        console.log(triviaQuestions[i].all_answers)
+        console.log(triviaQuestions[i].correct_answer)
+        console.log(triviaQuestions[i].incorrect_answers)    
     }
 
+        //Loop through the updated array of trivia questions to display question and answers
+    
+    for (let i = 0; i < triviaQuestions.length; i++) {
+
+        question.innerHTML = triviaQuestions[i].question
+        let answerOptions = triviaQuestions[i].all_answers
+        
+        answerOptions.forEach(element => {
+            let answerChoice = document.createElement('button')
+            answerChoice.setAttribute('class', 'answer')
+            answerChoice.innerHTML = `${element}`
+            answerContainer.appendChild(answerChoice)
+            answerChoice.addEventListener('click', checkAnswer)
+        })
+
+        function checkAnswer() {
+            let userAnswer = this.innerHTML;
+            let message = document.querySelector('#question-message')
+            if (userAnswer === triviaQuestions[i].correct_answer) {
+                console.log(`Correct. User clicked: ${userAnswer}. Correct answer is: ${triviaQuestions[i].correct_answer}`)
+                message.innerHTML = `Nice job! You're correct.`
+            } else {
+                console.log(`Wrong. User clicked: ${userAnswer}. Correct answer is: ${triviaQuestions[i].correct_answer}`)
+                message.innerHTML = `Sorry. Wrong answer.`
+            }
+        }
+        setTimeout(clearQuestion, 3000) 
+        
+        function clearQuestion() {
+            answerContainer.innerHTML = '';
+        }
+
+    }
+    
 }
 
 // Create function to display each question from the array and display answer choices. Randomize array index (0, 1, 2, 3) to display answer choices in different order.

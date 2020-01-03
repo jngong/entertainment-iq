@@ -9,11 +9,10 @@ body {
     background-image: url('images/beautiful-sky-875858.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     height: 100vh;
-    position: relative;
+    /* position: relative; */
 }
 
 h1 {
@@ -129,7 +128,7 @@ hr {
 /* Footer Styles */
 footer {
     margin: 1.5rem auto;
-    font-size: .8rem;
+    font-size: .7rem;
     width: 100vw;
     /* position: absolute; */
     /* bottom: 0; */
