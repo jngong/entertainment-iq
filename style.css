@@ -12,6 +12,7 @@ body {
     background-size: cover;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
+    height: 100vh;
 }
 
 h1 {
@@ -39,14 +40,27 @@ button {
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: .2rem;
+    width: 70%;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,.8);
+}
+
+hr {
+    border: .5px solid rgba(255,255,255,.5);
+    width: 75vw;
+    margin: 0 auto;
 }
 
 /* Category Styles */
-.category-container {
+.category-container-shown {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-around;
     align-items: center;
+}
+
+.category-container-hidden {
+    display: none;
 }
 
 .category {
@@ -59,20 +73,22 @@ button {
 
 /* Question and Answer Styles */
 .question-container {
-    /* display: none;  */
+    display: none; 
     width: 90%;
-    margin: 0 auto;
+    margin: 1rem auto;
 }
 
 #question {
     font-weight: 700;
     letter-spacing: .05rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: .5rem 0;
 }
 
 .answer {
-    width
+    letter-spacing: 0;
+    text-transform: capitalize;
+    /* width: 90%; */
 }
 
 #answer-container {
@@ -82,6 +98,10 @@ button {
 }
 
 /* Score Styles */
+.score-container {
+    display: none;
+}
+
 .score-container h2, p {
     margin: .5rem auto;
 }
@@ -92,15 +112,19 @@ button {
 
 /* Reset Button Styles */
 #reset-game {
-    width: 70%;
-    padding: .5% 1%;
-    margin: 1.3rem auto;
+    width: 60%;
+    margin: 1.5rem auto;
+    font-size: .8rem;
+    line-height: 2.5rem;
 }
 
 /* Footer Styles */
 footer {
     margin-top: 30px;
     font-size: .8rem;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
 }
 
 /* Styles for desktops and large desktops */
@@ -108,6 +132,11 @@ footer {
 
     body {
         height: 100vh;
+        background-size: unset;
+    }
+
+    header {
+        padding-top: 3rem;
     }
 
     header p {
@@ -115,14 +144,14 @@ footer {
         width: 70vw;
     }
 
-    .category-container {
+    .category-container-shown {
         flex-flow: row wrap;
         width: 80%;
         margin: 0 auto;
         padding: 2rem 0;
     }
 
-    .category-container h2 {
+    .category-container-shown h2 {
         flex-basis: 100%;
     }
 
