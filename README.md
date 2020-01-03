@@ -94,7 +94,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | HTML Structure | M | 1hr| 30 min | tbd |
-| Basic CSS Styles | M | 2hrs| tbd | tbd |
+| Basic CSS Styles | M | 2hrs| 1hr | tbd |
 | Category Buttons | M | 2hrs | tbd | tbd |
 | API to Display Question and Randomize Position of Answer Choices | H | 4hrs | tbd | tbd |
 | Record User Answers - Evaluate Right/Wrong | H | 4hrs | tbd | tbd |

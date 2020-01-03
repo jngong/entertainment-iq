@@ -6,7 +6,6 @@
 /* Main Styles */
 body {
     text-align: center;
-    margin: 0 auto;
     background-image: url('images/beautiful-sky-875858.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -18,11 +17,21 @@ body {
 h1 {
     font-family: 'Mukta Malar', sans-serif;
     font-size: 2.5rem;
+    font-weight: 800;
     letter-spacing: .05rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    color: rgb(246,225,174);
 }
 
 h2 {
     font-size: 1.2rem;
+    font-weight: 600;
+}
+
+p {
+    max-width: 90%;
+    margin: .5rem auto;
 }
 
 button {
@@ -45,17 +54,90 @@ button {
     height: 50px;
     line-height: 50px;
     margin-bottom: .5rem;
-    border: 1px solid blue;
+    border: 1px solid black;
+}
+
+/* Question and Answer Styles */
+.question-container {
+    /* display: none;  */
+    width: 90%;
+    margin: 0 auto;
+}
+
+#question {
+    font-weight: 700;
+    letter-spacing: .05rem;
+    font-size: 1.5rem;
+    padding: .5rem 0;
+}
+
+.answer {
+    width
+}
+
+#answer-container {
+    display: flex;
+    flex-flow: column wrap;
+    font-family: 'Mukta Malar', sans-serif;
+}
+
+/* Score Styles */
+.score-container h2, p {
+    margin: .5rem auto;
+}
+
+#score, .bold {
+    font-weight: 700;
 }
 
 /* Reset Button Styles */
 #reset-game {
     width: 70%;
     padding: .5% 1%;
+    margin: 1.3rem auto;
 }
 
 /* Footer Styles */
 footer {
     margin-top: 30px;
     font-size: .8rem;
+}
+
+/* Styles for desktops and large desktops */
+@media only screen and (min-width: 992px) {
+
+    body {
+        height: 100vh;
+    }
+
+    header p {
+        margin: 1rem auto;
+        width: 70vw;
+    }
+
+    .category-container {
+        flex-flow: row wrap;
+        width: 80%;
+        margin: 0 auto;
+        padding: 2rem 0;
+    }
+
+    .category-container h2 {
+        flex-basis: 100%;
+    }
+
+    .category {
+        width: 30%;
+        height: 20vh;
+        line-height: 10px;
+    }
+
+    .question-container, .score-container {
+        padding: 1rem 0;
+    }
+
+    #reset-game {
+        width: 30%;
+    }
+
 }
