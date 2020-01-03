@@ -80,10 +80,12 @@ function playGame() {
         console.log(triviaQuestions[i].incorrect_answers)    
     }
 
-        //Loop through the updated array of trivia questions to display question and answers
+        /* 
+        How do I loop through the updated array of trivia questions to run the displayQuestion function with a delay or pause triggered by the user click?setInterval? Leverage the length of the trivia questions array?
+        */
     
-    for (let i = 0; i < triviaQuestions.length; i++) {
-
+        //displayQuestion function takes the index value as an argument and displays the question and all its answer options. Within this, I need to figure out how to randomize the position of the answers.
+    function displayQuestion(i) {
         question.innerHTML = triviaQuestions[i].question
         let answerOptions = triviaQuestions[i].all_answers
         
@@ -95,6 +97,7 @@ function playGame() {
             answerChoice.addEventListener('click', checkAnswer)
         })
 
+            //checkAnswer funtion takes the index value as an argument and checks that the userAnswer is the same as the correct answer for that question
         function checkAnswer() {
             let userAnswer = this.innerHTML;
             let message = document.querySelector('#question-message')
@@ -106,12 +109,6 @@ function playGame() {
                 message.innerHTML = `Sorry. Wrong answer.`
             }
         }
-        setTimeout(clearQuestion, 3000) 
-        
-        function clearQuestion() {
-            answerContainer.innerHTML = '';
-        }
-
     }
     
 }

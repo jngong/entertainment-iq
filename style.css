@@ -71,6 +71,30 @@ hr {
     border: 1px solid black;
 }
 
+#music {
+    background-image: url(images/music-image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+}
+
+#film {
+    background-image: url(images/film-image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+}
+
+#tv {
+    background-image: url(images/tv-image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+}
+
 /* Question and Answer Styles */
 .question-container {
     display: none; 
@@ -166,6 +190,7 @@ footer {
         width: 30%;
         height: 20vh;
         line-height: 10px;
+        font-size: 1.5rem;
     }
 
     .question-container, .score-container {
