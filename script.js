@@ -66,6 +66,14 @@ function playGame() {
     let question = document.querySelector('#question')
     question.innerHTML = triviaQuestions[0].question
 
+    let potentialAnswers = [];
+    potentialAnswers.push(triviaQuestions[0].correct_answer)
+    
+    triviaQuestions[0].incorrect_answers.forEach(element => {
+        potentialAnswers.push(element)
+      });
+
+    console.log(potentialAnswers)
 
     let answerContainer = document.querySelector('#answer-container')
     let answerChoice = document.createElement('button')
