@@ -8,6 +8,30 @@
     <title>Entertainment IQ | Trivia Game</title>
 </head>
 <body>
+    <header>
+        <h1>entertainmentIQ</h1>
+        <p>Welcome to entertainmentIQ, the trivia game that tests your knowledge in popular entertainment. Choose a category to get started. Good luck!</p>
+    </header>
+    <div class='category-container'>
+        <h2>Choose A Category</h2>
+        <div class='category' id='film'>Film</div>
+        <div class='category' id='tv'>Television</div>
+        <div class='category' id='music'>Music</div>
+    </div>
+    <div class='question-container'>
+        <div id='question'></div>
+        <div id='answers'></div>
+    </div>
+    <div id='question-message'></div>
+    <div class='score-container'>
+        <h2>Your Score</h2>
+        <p id='score'>0 / 0</p>
+        <p id='questions-remaining'>You have <strong>12</strong> questions remaining</p>
+    </div>
+    <button id='reset-game'>Start A New Game</button>
+    <footer>
+        <p>Web Design and Development by Jennifer Gong.</p>
+    </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
 </body>
