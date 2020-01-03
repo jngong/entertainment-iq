@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.category-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.category {
+    width: 25%;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 1rem;
+    border: 1px solid blue;
+}
