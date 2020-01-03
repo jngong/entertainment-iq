@@ -7,12 +7,14 @@ let filmButton = document.querySelector('#film')
 let tvButton = document.querySelector('#tv')
 let musicButton = document.querySelector('#music')
 let categoryContainer = document.querySelector('.category-container')
+let questionContainer = document.querySelector('.question-container')
 
-// To start the game, user chooses a category. Add event listeners to category buttons to trigger function for API call.
+// Event listeners
 filmButton.addEventListener('click', filmQuestions)
 tvButton.addEventListener('click', tvQuestions)
 musicButton.addEventListener('click', musicQuestions)
 
+// Async functions to pull API data based on category button clicked.
 async function filmQuestions() {
     try {
         let response = await axios.get(`https://opentdb.com/api.php?amount=12&type=multiple&category=11`)
@@ -46,9 +48,11 @@ async function musicQuestions() {
     }
 }
 
+// Game play functions
 function hideCategories() {
     console.log(triviaQuestions)
     categoryContainer.style.display = 'none'
+    questionContainer.style.display = 'block'
 }
 
 

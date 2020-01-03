@@ -76,7 +76,7 @@ hr {
 .question-container {
     display: none; 
     width: 90%;
-    margin: 1rem auto;
+    margin: 1rem auto 3rem auto;
 }
 
 #question {
