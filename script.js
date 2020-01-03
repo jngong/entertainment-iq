@@ -3,6 +3,7 @@
 
 let userScore = 0;
 let questionsRemaining = 12;
+let triviaQuestions = [];
 
 // To start the game, user chooses a category. Add event listeners to category buttons to trigger function for API call.
 let filmButton = document.querySelector('#film')
@@ -13,16 +14,46 @@ filmButton.addEventListener('click', filmQuestions)
 tvButton.addEventListener('click', tvQuestions)
 musicButton.addEventListener('click', musicQuestions)
 
-function filmQuestions() {
-    console.log(filmButton)
+async function filmQuestions() {
+    try {
+        let response = await axios.get(`https://opentdb.com/api.php?amount=12&type=multiple&category=11`)
+        filmButton.removeEventListener('click', filmQuestions)
+        tvButton.removeEventListener('click', tvQuestions)
+        musicButton.removeEventListener('click', musicQuestions)
+        console.log(response.data.results)
+    } catch {
+        console.log(`Error occured: ${err}`);
+            console.log(err.response)
+
+    }
 }
 
-function tvQuestions() {
-    console.log(tvButton)
+async function tvQuestions() {
+    try {
+        let response = await axios.get(`https://opentdb.com/api.php?amount=12&type=multiple&category=14`)
+        console.log(response.data.results) 
+        filmButton.removeEventListener('click', filmQuestions)
+        tvButton.removeEventListener('click', tvQuestions)
+        musicButton.removeEventListener('click', musicQuestions)
+    } catch {
+        console.log(`Error occured: ${err}`);
+            console.log(err.response)
+
+    }
 }
 
-function musicQuestions() {
-    console.log(musicButton)
+async function musicQuestions() {
+    try {
+        let response = await axios.get(`https://opentdb.com/api.php?amount=12&type=multiple&category=12`)
+        console.log(response.data.results) 
+        filmButton.removeEventListener('click', filmQuestions)
+        tvButton.removeEventListener('click', tvQuestions)
+        musicButton.removeEventListener('click', musicQuestions)
+    } catch {
+        console.log(`Error occured: ${err}`);
+            console.log(err.response)
+
+    }
 }
 
 // Create async await function for API call and parse JSON data into a Javascript Object i.e. questionArray = JSON.parse(). Object will contain 2 properties - the results key is an array of 12 objects. For multiple choice questions: each object has a key for correct_answer and a key for incorrect_answers which is another array.
