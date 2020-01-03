@@ -1,12 +1,38 @@
 * {
     box-sizing: border-box;
+    /* border: 1px dashed blue; */
 }
 
+/* Main Styles */
 body {
     text-align: center;
     margin: 0 auto;
+    background-image: url('images/beautiful-sky-875858.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
 }
 
+h1 {
+    font-family: 'Mukta Malar', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: .05rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+button {
+    font-family: 'Mukta Malar', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+}
+
+/* Category Styles */
 .category-container {
     display: flex;
     flex-flow: column wrap;
@@ -15,9 +41,21 @@ body {
 }
 
 .category {
-    width: 25%;
+    width: 70%;
     height: 50px;
     line-height: 50px;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     border: 1px solid blue;
+}
+
+/* Reset Button Styles */
+#reset-game {
+    width: 70%;
+    padding: .5% 1%;
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 30px;
+    font-size: .8rem;
 }
