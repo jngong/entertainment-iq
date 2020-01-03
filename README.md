@@ -78,8 +78,8 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |  Day | Deliverable | Status
 |---|---| ---|
 |Thursday, 1/2| Project plan; Project approval | Completed
-|Friday, 1/3| Pseudocode functionality; Core App Structure (HTML & CSS) | In Progress
-|Monday, 1/6| Code fetching questions from API and record user answers | Incomplete
+|Friday, 1/3| Pseudocode functionality; Core App Structure (HTML & CSS) | Complete
+|Monday, 1/6| Code fetching questions from API and record user answers | In Progress
 |Tuesday, 1/7| Code functionality to track score; Code functionality to display final result | Incomplete
 |Wednesday, 1/8| Reset Game Button to restart; Finalize CSS with media queries; Completed MVP  | Incomplete
 |Thursday, 1/9| Present | Incomplete

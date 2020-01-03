@@ -1,7 +1,29 @@
 // Declare variable to track user score, initialize at 0
 // Declare variable to track # questions remaining, initialize at 12
 
+let userScore = 0;
+let questionsRemaining = 12;
+
 // To start the game, user chooses a category. Add event listeners to category buttons to trigger function for API call.
+let filmButton = document.querySelector('#film')
+let tvButton = document.querySelector('#tv')
+let musicButton = document.querySelector('#music')
+
+filmButton.addEventListener('click', filmQuestions)
+tvButton.addEventListener('click', tvQuestions)
+musicButton.addEventListener('click', musicQuestions)
+
+function filmQuestions() {
+    console.log(filmButton)
+}
+
+function tvQuestions() {
+    console.log(tvButton)
+}
+
+function musicQuestions() {
+    console.log(musicButton)
+}
 
 // Create async await function for API call and parse JSON data into a Javascript Object i.e. questionArray = JSON.parse(). Object will contain 2 properties - the results key is an array of 12 objects. For multiple choice questions: each object has a key for correct_answer and a key for incorrect_answers which is another array.
 
