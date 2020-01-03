@@ -48,18 +48,31 @@ async function musicQuestions() {
     }
 }
 
-// Game play functions
+/* Game play functions */
+
+// first step is to hide category div and replace w/ question div
 function hideCategories() {
     console.log(triviaQuestions)
+    console.log(triviaQuestions[0].correct_answer)
+    console.log(triviaQuestions[0].incorrect_answers)
     categoryContainer.style.display = 'none'
     questionContainer.style.display = 'block'
+    playGame();
 }
 
-
-
-// For multiple choice questions: each object has a key for correct_answer and a key for incorrect_answers which is another array.
-
 // Loop through each object to push the correct_answer value and the incorrect_answer values into a new property for that object.
+    // For multiple choice questions: each object has a key for correct_answer and a key for incorrect_answers which is another array.
+function playGame() {
+    let question = document.querySelector('#question')
+    question.innerHTML = triviaQuestions[0].question
+
+
+    let answerContainer = document.querySelector('#answer-container')
+    let answerChoice = document.createElement('button')
+    answerChoice.setAttribute('class', 'answer')
+    answerContainer.appendChild(answerChoice)
+
+}
 
 // Create function to display each question from the array and display answer choices. Randomize array index (0, 1, 2, 3) to display answer choices in different order.
 
