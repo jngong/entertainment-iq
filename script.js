@@ -82,7 +82,19 @@ function playGame() {
         answerChoice.setAttribute('class', 'answer')
         answerChoice.innerHTML = `${element}`
         answerContainer.appendChild(answerChoice)
+        answerChoice.addEventListener('click', checkAnswer)
     })
+
+    function checkAnswer() {
+        let userAnswer = this.innerHTML;
+        if (userAnswer === triviaQuestions[0].correct_answer) {
+            console.log(`User clicked: ${userAnswer}. Correct answer is: ${triviaQuestions[0].correct_answer}`)
+            console.log(`You are correct.`)
+        } else {
+            console.log(`User clicked: ${userAnswer}. Correct answer is: ${triviaQuestions[0].correct_answer}`)
+            console.log(`You are wrong.`)
+        }
+    }
 
 }
 
