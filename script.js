@@ -63,6 +63,7 @@ function playGame() {
     
     let answerContainer = document.querySelector('#answer-container')
     let question = document.querySelector('#question')
+    let message = document.querySelector('#question-message')
     
         // Loop through each object to push the correct_answer value and the incorrect_answer values into a new property for that object.
     for (let i = 0; i < triviaQuestions.length; i++) {
@@ -85,6 +86,18 @@ function playGame() {
         */
     
         //displayQuestion function takes the index value as an argument and displays the question and all its answer options. Within this, I need to figure out how to randomize the position of the answers.
+
+    function nextQuestion() {
+        answerContainer.innerHTML = ''
+        message.innerHTML = ''     
+        if (triviaQuestions.length > 0) {
+         displayQuestion(triviaQuestions.length - 1)        
+            
+        } else {
+            console.log('game over')
+        }
+    }
+    
     function displayQuestion(i) {
         question.innerHTML = triviaQuestions[i].question
         let answerOptions = triviaQuestions[i].all_answers
@@ -100,16 +113,20 @@ function playGame() {
             //checkAnswer funtion takes the index value as an argument and checks that the userAnswer is the same as the correct answer for that question
         function checkAnswer() {
             let userAnswer = this.innerHTML;
-            let message = document.querySelector('#question-message')
             if (userAnswer === triviaQuestions[i].correct_answer) {
                 console.log(`Correct. User clicked: ${userAnswer}. Correct answer is: ${triviaQuestions[i].correct_answer}`)
                 message.innerHTML = `Nice job! You're correct.`
+                triviaQuestions.pop();
             } else {
                 console.log(`Wrong. User clicked: ${userAnswer}. Correct answer is: ${triviaQuestions[i].correct_answer}`)
                 message.innerHTML = `Sorry. Wrong answer.`
+                triviaQuestions.pop();
             }
+            setTimeout(nextQuestion, 5000); 
         }
     }
+
+    nextQuestion();  
     
 }
 
