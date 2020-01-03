@@ -63,6 +63,8 @@ function hideCategories() {
 // Loop through each object to push the correct_answer value and the incorrect_answer values into a new property for that object.
     // For multiple choice questions: each object has a key for correct_answer and a key for incorrect_answers which is another array.
 function playGame() {
+    let answerContainer = document.querySelector('#answer-container')
+
     let question = document.querySelector('#question')
     question.innerHTML = triviaQuestions[0].question
 
@@ -75,10 +77,12 @@ function playGame() {
 
     console.log(potentialAnswers)
 
-    let answerContainer = document.querySelector('#answer-container')
-    let answerChoice = document.createElement('button')
-    answerChoice.setAttribute('class', 'answer')
-    answerContainer.appendChild(answerChoice)
+    potentialAnswers.forEach(element => {
+        let answerChoice = document.createElement('button')
+        answerChoice.setAttribute('class', 'answer')
+        answerChoice.innerHTML = `${element}`
+        answerContainer.appendChild(answerChoice)
+    })
 
 }
 
