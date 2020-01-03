@@ -1,15 +1,14 @@
-// Declare variable to track user score, initialize at 0
-// Declare variable to track # questions remaining, initialize at 12
+let userScore = 0; // Track user score
+let questionsRemaining = 12; // Track # questions remaining
+let triviaQuestions = []; // Store array of questions from API
 
-let userScore = 0;
-let questionsRemaining = 12;
-let triviaQuestions = [];
-
-// To start the game, user chooses a category. Add event listeners to category buttons to trigger function for API call.
+// Store DOM elements
 let filmButton = document.querySelector('#film')
 let tvButton = document.querySelector('#tv')
 let musicButton = document.querySelector('#music')
+let categoryContainer = document.querySelector('.category-container')
 
+// To start the game, user chooses a category. Add event listeners to category buttons to trigger function for API call.
 filmButton.addEventListener('click', filmQuestions)
 tvButton.addEventListener('click', tvQuestions)
 musicButton.addEventListener('click', musicQuestions)
@@ -17,46 +16,44 @@ musicButton.addEventListener('click', musicQuestions)
 async function filmQuestions() {
     try {
         let response = await axios.get(`https://opentdb.com/api.php?amount=12&type=multiple&category=11`)
-        filmButton.removeEventListener('click', filmQuestions)
-        tvButton.removeEventListener('click', tvQuestions)
-        musicButton.removeEventListener('click', musicQuestions)
-        console.log(response.data.results)
+        triviaQuestions = response.data.results
+        hideCategories();
     } catch {
         console.log(`Error occured: ${err}`);
             console.log(err.response)
-
     }
 }
 
 async function tvQuestions() {
     try {
         let response = await axios.get(`https://opentdb.com/api.php?amount=12&type=multiple&category=14`)
-        console.log(response.data.results) 
-        filmButton.removeEventListener('click', filmQuestions)
-        tvButton.removeEventListener('click', tvQuestions)
-        musicButton.removeEventListener('click', musicQuestions)
+        triviaQuestions = response.data.results
+        hideCategories();
     } catch {
         console.log(`Error occured: ${err}`);
             console.log(err.response)
-
     }
 }
 
 async function musicQuestions() {
     try {
         let response = await axios.get(`https://opentdb.com/api.php?amount=12&type=multiple&category=12`)
-        console.log(response.data.results) 
-        filmButton.removeEventListener('click', filmQuestions)
-        tvButton.removeEventListener('click', tvQuestions)
-        musicButton.removeEventListener('click', musicQuestions)
+        triviaQuestions = response.data.results
+        hideCategories();
     } catch {
         console.log(`Error occured: ${err}`);
             console.log(err.response)
-
     }
 }
 
-// Create async await function for API call and parse JSON data into a Javascript Object i.e. questionArray = JSON.parse(). Object will contain 2 properties - the results key is an array of 12 objects. For multiple choice questions: each object has a key for correct_answer and a key for incorrect_answers which is another array.
+function hideCategories() {
+    console.log(triviaQuestions)
+    categoryContainer.style.display = 'none'
+}
+
+
+
+// For multiple choice questions: each object has a key for correct_answer and a key for incorrect_answers which is another array.
 
 // Loop through each object to push the correct_answer value and the incorrect_answer values into a new property for that object.
 

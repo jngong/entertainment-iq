@@ -53,14 +53,14 @@ hr {
 }
 
 /* Category Styles */
-.category-container-shown {
+.category-container {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-around;
     align-items: center;
 }
 
-.category-container-hidden {
+.hidden {
     display: none;
 }
 
@@ -145,14 +145,14 @@ footer {
         width: 70vw;
     }
 
-    .category-container-shown {
+    .category-container {
         flex-flow: row wrap;
         width: 80%;
         margin: 0 auto;
         padding: 2rem 0;
     }
 
-    .category-container-shown h2 {
+    .category-container h2 {
         flex-basis: 100%;
     }
 
