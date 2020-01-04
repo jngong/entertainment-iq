@@ -8,6 +8,7 @@ let tvButton = document.querySelector('#tv')
 let musicButton = document.querySelector('#music')
 let categoryContainer = document.querySelector('.category-container')
 let questionContainer = document.querySelector('.question-container')
+let introParagraph = document.querySelector('header > p')
 
 // Event listeners
 filmButton.addEventListener('click', filmQuestions)
@@ -54,6 +55,7 @@ async function musicQuestions() {
 function hideCategories() {
     categoryContainer.style.display = 'none'
     questionContainer.style.display = 'block'
+    introParagraph.style.display = 'none'
     playGame();
 }
 
@@ -84,11 +86,6 @@ function playGame() {
         triviaQuestions[i].all_answers = randomizedAnswers; 
     }
 
-        /* 
-        How do I loop through the updated array of trivia questions to run the displayQuestion function with a delay or pause triggered by the user click?setInterval? Leverage the length of the trivia questions array?
-        */
-    
-        //displayQuestion function takes the index value as an argument and displays the question and all its answer options. Within this, I need to figure out how to randomize the position of the answers.
 
     function nextQuestion() {
         answerContainer.innerHTML = ''
