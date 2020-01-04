@@ -1,4 +1,5 @@
 let userScore = 0; // Track user score
+let questionsPlayed = 0;
 let questionsRemaining = 12; // Track # questions remaining
 let triviaQuestions = []; // Store array of questions from API
 
@@ -127,19 +128,45 @@ function playGame() {
             let correctAnswer = triviaQuestions[i].correct_answer
     
             if (userAnswer == correctAnswer) {
-                console.log(`Correct. User clicked: ${userAnswer}. Correct answer is: ${correctAnswer}. Incorrect answers: ${triviaQuestions[i].incorrect_answers}.`)
                 message.innerHTML = `Nice job! You're correct.`
                 this.style.backgroundColor = 'green'
+                
+                userScore++
+                questionsPlayed++
+                questionsRemaining--
+                
                 triviaQuestions.pop();
+
+                console.log(`Correct. User clicked: ${userAnswer}. Correct answer: ${correctAnswer}.`)
             } else {
-                let correctButton = document.querySelector('.correct-answer')
-                console.log(`Wrong. User clicked: ${userAnswer}. Correct answer is: ${correctAnswer}. Incorrect answers: ${triviaQuestions[i].incorrect_answers}.`)
                 message.innerHTML = `Sorry. Wrong answer. <br>The correct answer is ${correctAnswer}.`
+                
+                let correctButton = document.querySelector('.correct-answer')
                 correctButton.style.backgroundColor = 'green'
                 this.style.backgroundColor = 'red'
+                
+                questionsPlayed++
+                questionsRemaining--
+                
                 triviaQuestions.pop();
+
+                console.log(`Wrong. User clicked: ${userAnswer}. Correct answer: ${correctAnswer}.`)
             }
+            console.log(`Current score: ${userScore} / ${questionsPlayed}, Qs remaining: ${questionsRemaining}`);
+
+            displayScore();
             setTimeout(nextQuestion, 3000); 
+        }
+
+        function displayScore() {
+            let scoreDisplay = document.querySelector('#score')
+            let numberQuestionsLeft = document.querySelector('#questions-remaining')
+
+            scoreDisplay.innerHTML = ``
+            scoreDisplay.innerHTML = `${userScore} / ${questionsPlayed}`
+            
+            numberQuestionsLeft.innerHTML = ``
+            numberQuestionsLeft.innerHTML = `${questionsRemaining}`
         }
     }
 

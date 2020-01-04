@@ -137,7 +137,7 @@ hr {
     margin: .5rem auto;
 }
 
-#score, .bold {
+#score, #questions-remaining {
     font-weight: 700;
 }
 
