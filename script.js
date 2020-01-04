@@ -72,13 +72,16 @@ function playGame() {
         potentialAnswers.push(triviaQuestions[i].correct_answer)
         triviaQuestions[i].incorrect_answers.forEach(element => {
             potentialAnswers.push(element)
-        });    
-        triviaQuestions[i].all_answers = potentialAnswers;
+        });
+        // randomize the potentialAnswers array. sourced solution: https://medium.com/@fyoiza/how-to-randomize-an-array-in-javascript-8505942e452
+        let randomizedAnswers = []
+        while(potentialAnswers.length !== 0) {
+            let randomIndex = Math.floor(Math.random() * potentialAnswers.length);
+            randomizedAnswers.push(potentialAnswers[randomIndex]);
+            potentialAnswers.splice(randomIndex, 1)
+        }
         
-        console.log(`Q${i+1}: ${triviaQuestions[i].question}`)
-        console.log(triviaQuestions[i].all_answers)
-        console.log(triviaQuestions[i].correct_answer)
-        console.log(triviaQuestions[i].incorrect_answers)    
+        triviaQuestions[i].all_answers = randomizedAnswers; 
     }
 
         /* 
@@ -95,13 +98,19 @@ function playGame() {
             
         } else {
             console.log('game over')
+            question.innerHTML = 'Game Over'
         }
     }
     
     function displayQuestion(i) {
         question.innerHTML = triviaQuestions[i].question
         let answerOptions = triviaQuestions[i].all_answers
-        
+
+        console.log(`Q${i+1}: ${triviaQuestions[i].question}`)
+        console.log(answerOptions)
+        console.log(triviaQuestions[i].correct_answer)
+        console.log(triviaQuestions[i].incorrect_answers) 
+
         answerOptions.forEach(element => {
             let answerChoice = document.createElement('button')
             answerChoice.setAttribute('class', 'answer')
@@ -122,7 +131,7 @@ function playGame() {
                 message.innerHTML = `Sorry. Wrong answer.`
                 triviaQuestions.pop();
             }
-            setTimeout(nextQuestion, 5000); 
+            setTimeout(nextQuestion, 2000); 
         }
     }
 

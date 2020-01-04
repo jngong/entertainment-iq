@@ -96,8 +96,8 @@ You are **responsible** for scheduling time with your squad to seek approval for
 | HTML Structure | M | 1hr| 30 min | 30min |
 | Basic CSS Styles | M | 2hrs| 2hrs | 2hrs |
 | Category Buttons | M | 2hrs | 1hr | 1hr |
-| API to Display Question and Randomize Position of Answer Choices | H | 4hrs | 3hrs | tbd |
-| Record User Answers - Evaluate Right/Wrong | H | 4hrs | 30 min | tbd |
+| API to Display Question and Randomize Position of Answer Choices | H | 4hrs | 4hrs | 4hrs |
+| Record User Answers - Evaluate Right/Wrong | H | 4hrs | 1hr | 1hr |
 | Track Score | H | 4hrs | tbd | tbd |
 | Finish Game & Display Result | H | 3hrs | tbd | tbd |
 | Reset Game Function | M | 3hrs | tbd | tbd |
@@ -119,3 +119,5 @@ function reverse(string) {
 ## Change Log
  Pending:
  Use this section to document what changes were made and the reasoning behind those changes.  
+
+In the timeframe list, tasks 4 and 5 overlapped so the actual time isn't fully accurate. I decided to leave the random order to later, as I wanted to focus on getting the game ready first.
