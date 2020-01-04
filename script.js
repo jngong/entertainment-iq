@@ -9,6 +9,7 @@ let musicButton = document.querySelector('#music')
 let categoryContainer = document.querySelector('.category-container')
 let questionContainer = document.querySelector('.question-container')
 let introParagraph = document.querySelector('header > p')
+let scoreContainer = document.querySelector('.score-container')
 
 // Event listeners
 filmButton.addEventListener('click', filmQuestions)
@@ -56,6 +57,7 @@ function hideCategories() {
     categoryContainer.style.display = 'none'
     questionContainer.style.display = 'block'
     introParagraph.style.display = 'none'
+    scoreContainer.style.display = 'block'
     playGame();
 }
 
@@ -75,6 +77,7 @@ function playGame() {
         triviaQuestions[i].incorrect_answers.forEach(element => {
             potentialAnswers.push(element)
         });
+
         // randomize the potentialAnswers array. sourced solution: https://medium.com/@fyoiza/how-to-randomize-an-array-in-javascript-8505942e452
         let randomizedAnswers = []
         while(potentialAnswers.length !== 0) {
@@ -85,7 +88,6 @@ function playGame() {
         
         triviaQuestions[i].all_answers = randomizedAnswers; 
     }
-
 
     function nextQuestion() {
         answerContainer.innerHTML = ''
@@ -105,13 +107,16 @@ function playGame() {
 
         console.log(`Q${i+1}: ${triviaQuestions[i].question}`)
         console.log(answerOptions)
-        console.log(triviaQuestions[i].correct_answer)
-        console.log(triviaQuestions[i].incorrect_answers) 
 
         answerOptions.forEach(element => {
             let answerChoice = document.createElement('button')
             answerChoice.setAttribute('class', 'answer')
             answerChoice.innerHTML = `${element}`
+
+            if (element === triviaQuestions[i].correct_answer) {
+                answerChoice.classList.add('correct-answer')
+            }
+
             answerContainer.appendChild(answerChoice)
             answerChoice.addEventListener('click', checkAnswer)
         })
@@ -119,16 +124,22 @@ function playGame() {
             //checkAnswer funtion takes the index value as an argument and checks that the userAnswer is the same as the correct answer for that question
         function checkAnswer() {
             let userAnswer = this.innerHTML;
-            if (userAnswer === triviaQuestions[i].correct_answer) {
-                console.log(`Correct. User clicked: ${userAnswer}. Correct answer is: ${triviaQuestions[i].correct_answer}`)
+            let correctAnswer = triviaQuestions[i].correct_answer
+    
+            if (userAnswer == correctAnswer) {
+                console.log(`Correct. User clicked: ${userAnswer}. Correct answer is: ${correctAnswer}. Incorrect answers: ${triviaQuestions[i].incorrect_answers}.`)
                 message.innerHTML = `Nice job! You're correct.`
+                this.style.backgroundColor = 'green'
                 triviaQuestions.pop();
             } else {
-                console.log(`Wrong. User clicked: ${userAnswer}. Correct answer is: ${triviaQuestions[i].correct_answer}`)
-                message.innerHTML = `Sorry. Wrong answer.`
+                let correctButton = document.querySelector('.correct-answer')
+                console.log(`Wrong. User clicked: ${userAnswer}. Correct answer is: ${correctAnswer}. Incorrect answers: ${triviaQuestions[i].incorrect_answers}.`)
+                message.innerHTML = `Sorry. Wrong answer. <br>The correct answer is ${correctAnswer}.`
+                correctButton.style.backgroundColor = 'green'
+                this.style.backgroundColor = 'red'
                 triviaQuestions.pop();
             }
-            setTimeout(nextQuestion, 2000); 
+            setTimeout(nextQuestion, 3000); 
         }
     }
 
@@ -136,13 +147,7 @@ function playGame() {
     
 }
 
-// Create function to display each question from the array and display answer choices. Randomize array index (0, 1, 2, 3) to display answer choices in different order.
-
-// Add event listener to answer choices. When clicked, store the answer in a new variable (userAnswer) and trigger function to evaluate the Answer
-
-// Evaluate the userAnswer compared to the correct_answer. If the same, display a simple You're Right message. If not the same, display You're Incorrect message and the value of the correct_answer.
-    // Pop or Splice the question out of the questionArray.
-    // Decide whether or not to create a button to move to the next question OR a timer to move on automatically after 5 seconds.
+    // Using a timer to move to the next question (setTimeout), add an animation/transition as a visual indicator of the next question
 
 // When the length of the questionArray is 0, the game is over. Final function will display and evaluate final score.
     // If user score is >= 9, display 'Expert' message
