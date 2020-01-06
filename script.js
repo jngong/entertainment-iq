@@ -23,7 +23,7 @@ resetButton.addEventListener('click', resetGame)
 // Async functions to pull API data based on category button clicked.
 async function filmQuestions() {
     try {
-        let response = await axios.get(`https://opentdb.com/api.php?amount=12&type=multiple&category=11`)
+        let response = await axios.get(`https://opentdb.com/api.php?amount=12&category=11`)
         triviaQuestions = response.data.results
         category = 'movies'
         hideCategories();
@@ -35,7 +35,7 @@ async function filmQuestions() {
 
 async function tvQuestions() {
     try {
-        let response = await axios.get(`https://opentdb.com/api.php?amount=12&type=multiple&category=14`)
+        let response = await axios.get(`https://opentdb.com/api.php?amount=12&category=14`)
         triviaQuestions = response.data.results
         category = 'TV'
         hideCategories();
@@ -47,7 +47,7 @@ async function tvQuestions() {
 
 async function musicQuestions() {
     try {
-        let response = await axios.get(`https://opentdb.com/api.php?amount=12&type=multiple&category=12`)
+        let response = await axios.get(`https://opentdb.com/api.php?amount=12&category=12`)
         triviaQuestions = response.data.results
         category = 'music'
         hideCategories();
@@ -102,16 +102,19 @@ function playGame() {
         triviaQuestions[i].incorrect_answers.forEach(element => {
             potentialAnswers.push(element)
         });
-
-        // randomize the potentialAnswers array. sourced solution: https://medium.com/@fyoiza/how-to-randomize-an-array-in-javascript-8505942e452
-        let randomizedAnswers = []
-        while(potentialAnswers.length !== 0) {
-            let randomIndex = Math.floor(Math.random() * potentialAnswers.length);
-            randomizedAnswers.push(potentialAnswers[randomIndex]);
-            potentialAnswers.splice(randomIndex, 1)
-        }
         
-        triviaQuestions[i].all_answers = randomizedAnswers; 
+        if (triviaQuestions[i].type === 'multiple') {
+            // randomize the potentialAnswers array. sourced solution: https://medium.com/@fyoiza/how-to-randomize-an-array-in-javascript-8505942e452
+            let randomizedAnswers = []
+            while(potentialAnswers.length !== 0) {
+                let randomIndex = Math.floor(Math.random() * potentialAnswers.length);
+                randomizedAnswers.push(potentialAnswers[randomIndex]);
+                potentialAnswers.splice(randomIndex, 1)
+            }            
+            triviaQuestions[i].all_answers = randomizedAnswers; 
+        } else if (triviaQuestions[i].type === 'boolean') {
+            triviaQuestions[i].all_answers = ['True', 'False']
+        }
     }
 
         // function to evaluate and display final score. Called in nextQuestion function
