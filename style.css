@@ -11,36 +11,37 @@ body {
     background-position: center;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    height: 100vh;
-    /* position: relative; */
+    /* height: 100vh; */
+}
+
+.main-container {
+    margin: 20px auto;
+    background-color: rgba(255,255,255,.8);
+    max-width: 90%;
+    padding: 10px 0;
 }
 
 h1 {
     font-family: 'Mukta Malar', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 800;
     letter-spacing: .05rem;
     margin-top: 1rem;
     margin-bottom: 0;
     color: #23394A;
     text-shadow: 4px 2px 0px #E0E0E0;
+    padding: 0;
 }
 
 h2 {
     font-size: 1.2rem;
     font-weight: 600;
+    color: #23394A;
     text-shadow: 2px 1px 0px #E0E0E0;
 }
 
-p {
-    max-width: 90%;
-    margin: .5rem auto;
-}
-
 header p {
-    background-color: #E0E0E0;
-    max-width: 100%;
-    padding: 15px 20px;
+    max-width: 90%;
 }
 
 button {
@@ -51,13 +52,14 @@ button {
     width: 70%;
     margin: 0 auto;
     background-color: rgba(255,255,255,.8);
+    border-radius: 3px;
 }
 
-hr {
-    border: .5px solid rgba(255,255,255,.5);
-    width: 75vw;
-    margin: 0 auto;
-}
+button:hover {
+    transform: scale(1.1);
+} 
+
+
 
 /* Category Styles */
 .category-container {
@@ -65,6 +67,7 @@ hr {
     flex-flow: column wrap;
     justify-content: space-around;
     align-items: center;
+    padding: 20px 0;
 }
 
 .hidden {
@@ -75,7 +78,7 @@ hr {
     width: 70%;
     height: 50px;
     line-height: 50px;
-    margin-bottom: .5rem;
+    margin: .5rem 0;
     border: 1px solid black;
 }
 
@@ -108,26 +111,22 @@ hr {
     display: none;
     justify-content: center; 
     flex-flow: column wrap;
-    width: 90%;
-    margin: 1rem auto;
+    margin: 0 auto;
     padding: 10px 2px;
-    background-color: rgba(255,255,255,.8);
-
 }
 
 #question {
     font-weight: 700;
-    letter-spacing: .05rem;
-    font-size: 1.1rem;
+    letter-spacing: .02rem;
     padding: .5rem;
-    width: 100%;
+    color: #400101;
 }
 
 .answer {
     letter-spacing: 0;
     text-transform: capitalize;
-    margin: .5rem auto;
-    background-color: rgba(100,154,190,1);
+    margin: .2rem auto;
+    background-color: #F2B279;
     border: none;
     /* width: 90%; */
 }
@@ -149,7 +148,6 @@ hr {
 /* Score Styles */
 .score-container {
     display: none;
-    background-color: rgba(255,255,255,.8);
     width: 90%;
     margin: 0 auto;
 }
@@ -166,25 +164,41 @@ hr {
 #reset-game {
     width: 60%;
     margin: 1.5rem auto;
-    font-size: .8rem;
     line-height: 2.5rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
 }
 
 /* Footer Styles */
+
+hr {
+    border: .5px solid rgba(255,255,255);
+    width: 90vw;
+    margin: 1rem auto;
+}
+
 footer {
-    margin: 1.5rem auto;
-    font-size: .7rem;
+    font-size: .6rem;
     width: 100vw;
-    /* position: absolute; */
-    /* bottom: 0; */
+    font-weight: 700;
+    margin: 1rem auto;
+}
+
+footer p {
+    background-color: #fff;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 1px 0;
 }
 
 footer a {
     text-decoration: none;
+    color: #D9814E;
 }
 
-footer a:visited {
-    color: #fff;
+footer a:visited, a:hover {
+    color: #AEB5BF;
 }
 
 /* Styles for tablets */

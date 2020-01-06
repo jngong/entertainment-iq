@@ -120,7 +120,7 @@ function playGame() {
             question.innerHTML = `<p>Your final score is ${userScore}.</p><p id='final-message'>Congratulations! You are an expert in obscure facts about ${category}. You win bragging rights!</p>`
         } else if (userScore <= 4) {
             console.log(`Game over. User is a beginner.`)
-            question.innerHTML = `<p>Your final score is ${userScore}.</p><p id='final-message'>Disaster. Looks like you need to study up on your ${category} facts and try again later.</p>`
+            question.innerHTML = `<p>Your final score is ${userScore}.</p><p id='final-message'>:( Looks like you need to study up on your ${category} facts and try again later.</p>`
         } else {
             console.log(`Game over. User has intermediate knowledge.`)
             question.innerHTML = `<p>Your final score is ${userScore}.</p><p id='final-message'>Nice work! You have some solid knowledge about ${category}, but don't win the top prize.</p>`

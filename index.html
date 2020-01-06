@@ -9,31 +9,34 @@
     <title>entertainmentIQ | Trivia Game</title>
 </head>
 <body>
-    <header>
-        <h1>entertainmentIQ</h1>
-        <p>Welcome to entertainmentIQ, the trivia game that tests your knowledge in popular entertainment. Choose a category to get started. Good luck!</p>
-    </header>
-    <div class='category-container'>
-        <h2>Choose A Category</h2>
-        <button class='category' id='film'>Film</button>
-        <button class='category' id='tv'>Television</button>
-        <button class='category' id='music'>Music</button>
-    </div>
-    <div class='score-container'>
-        <h2>Your Score</h2>
-        <p id='score'>0 / 0</p>
-        <p>You have <span id='questions-remaining'>12</span> questions remaining</p>
-    </div>
-    <div class='question-container'>
-        <div id='question'></div>
-        <div id='answer-container'></div>
-        <div id='question-message'></div>
-    </div>
+    <div class='main-container'>
+        <header>
+            <h1>entertainmentIQ</h1>
+            <p>Welcome to entertainmentIQ, the trivia game that tests your knowledge in popular entertainment. Choose a category to get started. Good luck!</p>
+        </header>
+        <div class='category-container'>
+            <h2>Choose A Category</h2>
+            <button class='category' id='film'>Film</button>
+            <button class='category' id='tv'>Television</button>
+            <button class='category' id='music'>Music</button>
+        </div>
+        <div class='score-container'>
+            <h2>Your Score</h2>
+            <p id='score'>0 / 0</p>
+            <p>You have <span id='questions-remaining'>12</span> questions remaining</p>
+        </div>
+        <div class='question-container'>
+            <div id='question'></div>
+            <div id='answer-container'></div>
+            <div id='question-message'></div>
+        </div>
+    </div> <!-- end of main-container div -->
     <button id='reset-game'>Start New Game</button>
-    <hr>
     <footer>
+        <hr>
         <p>Web Design and Development by Jennifer Gong</p>
-        <p>Trivia questions sourced from <a href="https://opentdb.com/">Open Trivia Database</a>. Images sourced from  <a href="https://www.pexels.com/">Pexels</a>.</p>
+        <p>Trivia questions sourced from <a href="https://opentdb.com/">Open Trivia Database</a></p>
+        <p>Images sourced from  <a href="https://www.pexels.com/">Pexels</a></p>
     </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
