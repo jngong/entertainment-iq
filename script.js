@@ -12,11 +12,13 @@ let categoryContainer = document.querySelector('.category-container')
 let questionContainer = document.querySelector('.question-container')
 let introParagraph = document.querySelector('header > p')
 let scoreContainer = document.querySelector('.score-container')
+let resetButton = document.querySelector('#reset-game')
 
 // Event listeners
 filmButton.addEventListener('click', filmQuestions)
 tvButton.addEventListener('click', tvQuestions)
 musicButton.addEventListener('click', musicQuestions)
+resetButton.addEventListener('click', resetGame)
 
 // Async functions to pull API data based on category button clicked.
 async function filmQuestions() {
@@ -66,6 +68,22 @@ function hideCategories() {
     playGame();
 }
 
+//reset game function 
+function resetGame() {
+    categoryContainer.style.display = 'flex'
+    questionContainer.style.display = 'none'
+    introParagraph.style.display = 'block'
+    scoreContainer.innerHTML = `<h2>Your Score</h2>
+    <p id='score'>0 / 0</p>
+    <p>You have <span id='questions-remaining'>12</span> questions remaining</p>`
+    
+    userScore = 0
+    category = ''
+    questionsPlayed = 0
+    questionsRemaining = 12
+    triviaQuestions = []
+}
+
 // For multiple choice questions: each object has a key for correct_answer and a key for incorrect_answers which is another array.
 function playGame() {
     console.log(triviaQuestions)
@@ -105,7 +123,7 @@ function playGame() {
             question.innerHTML = `<p>Your final score is ${userScore} correct answers.</p><p>Disaster. Looks like you need to study up on your ${category} facts and try again later.</p>`
         } else {
             console.log(`Game over. User has intermediate knowledge.`)
-            question.innerHTML = `<p>Your final score is ${userScore} correct answers.</p><p>Nice work! You have some solid knowledge about ${category}, but can't take home the top prize.</p>`
+            question.innerHTML = `<p>Your final score is ${userScore} correct answers.</p><p>Nice work! You have some solid knowledge about ${category}, but don't win the top prize.</p>`
         }
     }
 
@@ -193,11 +211,6 @@ function playGame() {
 }
 
     // Using a timer to move to the next question (setTimeout), add an animation/transition as a visual indicator of the next question
-
-// When the length of the questionArray is 0, the game is over. Final function will display and evaluate final score.
-    // If user score is >= 9, display 'Expert' message
-    // If user score is >= 5 && <= 8, display 'Intermediate' message
-    // If user score is <=4, display 'Novice' message
 
 // Add event Listener to "Reset Game" button that will clear all values (userScore, questionsArray, etc.) and prompt user to choose a category to get started.
 
