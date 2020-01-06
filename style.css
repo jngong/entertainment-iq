@@ -6,7 +6,7 @@
 /* Main Styles */
 body {
     text-align: center;
-    background-image: url('images/beautiful-sky-875858.jpg');
+    background-image: url('images/brick-wall-background.jpg');
     background-repeat: no-repeat;
     background-position: center;
     font-family: 'Open Sans', sans-serif;
@@ -22,17 +22,25 @@ h1 {
     letter-spacing: .05rem;
     margin-top: 2rem;
     margin-bottom: 0;
-    color: rgb(246,225,174);
+    color: black;
+    text-shadow: 4px 2px 0px #E0E0E0;
 }
 
 h2 {
     font-size: 1.2rem;
     font-weight: 600;
+    text-shadow: 2px 1px 0px #E0E0E0;
 }
 
 p {
     max-width: 90%;
     margin: .5rem auto;
+}
+
+header p {
+    background-color: #E0E0E0;
+    max-width: 100%;
+    padding: 15px 20px;
 }
 
 button {
