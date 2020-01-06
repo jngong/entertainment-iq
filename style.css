@@ -109,7 +109,7 @@ hr {
     font-weight: 700;
     letter-spacing: .05rem;
     font-size: 1.1rem;
-    padding: .5rem 0;
+    padding: .5rem;
 }
 
 .answer {
@@ -158,6 +158,14 @@ footer {
     /* bottom: 0; */
 }
 
+footer a {
+    text-decoration: none;
+}
+
+footer a:visited {
+    color: #fff;
+}
+
 /* Styles for desktops and large desktops */
 @media only screen and (min-width: 992px) {
 
@@ -193,8 +201,29 @@ footer {
         font-size: 1.5rem;
     }
 
-    .question-container, .score-container {
+    .score-container {
         padding: 1rem 0;
+    }
+
+    .question-container {
+        height: 250px;
+        padding: 20px 5px;
+    }
+
+    #answer-container {
+        flex-direction: row;
+        width: 60%;
+        justify-content: space-evenly;
+        margin: 0 auto;
+        height: 150px;
+        align-items: center;
+        padding: 10px auto;
+        
+    }
+
+    .answer {
+        width: 45%; 
+        height: 50px;
     }
 
     #reset-game {

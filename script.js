@@ -212,7 +212,6 @@ function playGame() {
 
     // Using a timer to move to the next question (setTimeout), add an animation/transition as a visual indicator of the next question
 
-// Add event Listener to "Reset Game" button that will clear all values (userScore, questionsArray, etc.) and prompt user to choose a category to get started.
 
 
 
