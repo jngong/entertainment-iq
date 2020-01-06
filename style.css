@@ -315,4 +315,8 @@ footer a:hover {
         max-width: 275px;
     }
 
+    #final-message {
+        padding-bottom: 5%;
+    }
+
 }
