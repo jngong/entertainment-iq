@@ -166,6 +166,7 @@ function playGame() {
             if (userAnswer == correctAnswer) {
                 message.innerHTML = `Nice job! You're correct.`
                 this.style.backgroundColor = 'green'
+                this.style.color = 'white'
                 
                 userScore++
                 questionsPlayed++
@@ -175,11 +176,19 @@ function playGame() {
 
                 console.log(`Correct. User clicked: ${userAnswer}. Correct answer: ${correctAnswer}.`)
             } else {
-                message.innerHTML = `Sorry. Wrong answer. <br>The correct answer is ${correctAnswer}.`
+                message.innerHTML = `Sorry. Wrong answer.`
+
+                this.style.backgroundColor = 'red'
+                this.style.color = 'white'
                 
                 let correctButton = document.querySelector('.correct-answer')
-                correctButton.style.backgroundColor = 'green'
-                this.style.backgroundColor = 'red'
+                
+                setTimeout(showCorrect, 1000)
+                function showCorrect(){ 
+                    correctButton.style.backgroundColor = 'green'
+                    correctButton.style.color = 'white'
+                    correctButton.style.transform = 'scale(1.1)'
+                }
                 
                 questionsPlayed++
                 questionsRemaining--
