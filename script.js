@@ -2,6 +2,7 @@ let userScore = 0; // Track user score
 let questionsPlayed = 0;
 let questionsRemaining = 12; // Track # questions remaining
 let triviaQuestions = []; // Store array of questions from API
+let category
 
 // Store DOM elements
 let filmButton = document.querySelector('#film')
@@ -22,6 +23,7 @@ async function filmQuestions() {
     try {
         let response = await axios.get(`https://opentdb.com/api.php?amount=12&type=multiple&category=11`)
         triviaQuestions = response.data.results
+        category = 'movies'
         hideCategories();
     } catch {
         console.log(`Error occured: ${err}`);
@@ -33,6 +35,7 @@ async function tvQuestions() {
     try {
         let response = await axios.get(`https://opentdb.com/api.php?amount=12&type=multiple&category=14`)
         triviaQuestions = response.data.results
+        category = 'TV'
         hideCategories();
     } catch {
         console.log(`Error occured: ${err}`);
@@ -44,6 +47,7 @@ async function musicQuestions() {
     try {
         let response = await axios.get(`https://opentdb.com/api.php?amount=12&type=multiple&category=12`)
         triviaQuestions = response.data.results
+        category = 'music'
         hideCategories();
     } catch {
         console.log(`Error occured: ${err}`);
@@ -90,6 +94,21 @@ function playGame() {
         triviaQuestions[i].all_answers = randomizedAnswers; 
     }
 
+        // function to evaluate and display final score. Called in nextQuestion function
+    function finalScore() {
+        scoreContainer.style.display = 'none'
+        if (userScore >= 9) {
+            console.log(`Game over. User is an expert`)
+            question.innerHTML = `<p>Your final score is ${userScore} correct answers.</p><p>Congratulations! You are an expert in obscure facts about ${category}. You win bragging rights!</p>`
+        } else if (userScore <= 4) {
+            console.log(`Game over. User is a beginner.`)
+            question.innerHTML = `<p>Your final score is ${userScore} correct answers.</p><p>Disaster. Looks like you need to study up on your ${category} facts and try again later.</p>`
+        } else {
+            console.log(`Game over. User has intermediate knowledge.`)
+            question.innerHTML = `<p>Your final score is ${userScore} correct answers.</p><p>Nice work! You have some solid knowledge about ${category}, but can't take home the top prize.</p>`
+        }
+    }
+
     function nextQuestion() {
         answerContainer.innerHTML = ''
         message.innerHTML = ''     
@@ -97,8 +116,7 @@ function playGame() {
          displayQuestion(triviaQuestions.length - 1)        
             
         } else {
-            console.log('game over')
-            question.innerHTML = 'Game Over'
+            finalScore();
         }
     }
     
