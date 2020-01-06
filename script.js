@@ -74,7 +74,7 @@ function resetGame() {
     questionContainer.style.display = 'none'
     introParagraph.style.display = 'block'
     scoreContainer.style.display = 'none'
-    
+
     scoreContainer.innerHTML = `<h2>Your Score</h2>
     <p id='score'>0 / 0</p>
     <p>You have <span id='questions-remaining'>12</span> questions remaining</p>`
@@ -122,7 +122,7 @@ function playGame() {
             question.innerHTML = `<p>Your final score is ${userScore}.</p><p id='final-message'>Congratulations! You are an expert in obscure facts about ${category}. You win bragging rights!</p>`
         } else if (userScore <= 4) {
             console.log(`Game over. User is a beginner.`)
-            question.innerHTML = `<p>Your final score is ${userScore}.</p><p id='final-message'>:( Looks like you need to study up on your ${category} facts and try again later.</p>`
+            question.innerHTML = `<p>Your final score is ${userScore}.</p><p id='final-message'>Sorry, you lose. Looks like you need to study up on your ${category} facts and try again later.</p>`
         } else {
             console.log(`Game over. User has intermediate knowledge.`)
             question.innerHTML = `<p>Your final score is ${userScore}.</p><p id='final-message'>Nice work! You have some solid knowledge about ${category}, but don't win the top prize.</p>`
