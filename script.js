@@ -73,6 +73,8 @@ function resetGame() {
     categoryContainer.style.display = 'flex'
     questionContainer.style.display = 'none'
     introParagraph.style.display = 'block'
+    scoreContainer.style.display = 'none'
+    
     scoreContainer.innerHTML = `<h2>Your Score</h2>
     <p id='score'>0 / 0</p>
     <p>You have <span id='questions-remaining'>12</span> questions remaining</p>`
