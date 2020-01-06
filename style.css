@@ -20,9 +20,9 @@ h1 {
     font-size: 2.5rem;
     font-weight: 800;
     letter-spacing: .05rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 0;
-    color: black;
+    color: #23394A;
     text-shadow: 4px 2px 0px #E0E0E0;
 }
 
@@ -105,7 +105,9 @@ hr {
 
 /* Question and Answer Styles */
 .question-container {
-    display: none; 
+    display: none;
+    justify-content: center; 
+    flex-flow: column wrap;
     width: 90%;
     margin: 1rem auto;
     padding: 10px 2px;
@@ -118,6 +120,7 @@ hr {
     letter-spacing: .05rem;
     font-size: 1.1rem;
     padding: .5rem;
+    width: 100%;
 }
 
 .answer {
@@ -136,9 +139,19 @@ hr {
     margin-bottom: 2px;
 }
 
+#final-message {
+    margin-top: 2rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
 /* Score Styles */
 .score-container {
     display: none;
+    background-color: rgba(255,255,255,.8);
+    width: 90%;
+    margin: 0 auto;
 }
 
 .score-container h2, p {
@@ -174,22 +187,9 @@ footer a:visited {
     color: #fff;
 }
 
-/* Styles for desktops and large desktops */
-@media only screen and (min-width: 992px) {
+/* Styles for tablets */
 
-    body {
-        height: 100vh;
-        background-size: unset;
-    }
-
-    header {
-        padding-top: 3rem;
-    }
-
-    header p {
-        margin: 1rem auto;
-        width: 70vw;
-    }
+@media only screen and (min-width: 768px) {
 
     .category-container {
         flex-flow: row wrap;
@@ -208,13 +208,38 @@ footer a:visited {
         line-height: 10px;
         font-size: 1.5rem;
     }
+}
+
+/* Styles for desktops and large desktops */
+@media only screen and (min-width: 992px) {
+
+    body {
+        height: 100vh;
+        background-size: unset;
+    }
+
+    header {
+        padding-top: 3rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+        letter-spacing: .2rem;
+        text-shadow: 5px 2px 0 #E0E0E0;
+    }
+
+    header p {
+        margin: 1rem auto;
+        width: 70vw;
+    }
+
 
     .score-container {
         padding: 1rem 0;
     }
 
     .question-container {
-        height: 250px;
+        height: 300px;
         padding: 20px 5px;
     }
 
