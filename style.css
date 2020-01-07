@@ -153,21 +153,29 @@ button {
 .loading-bar {
     display: none;
     width: 200px;
-    height: 15px;
-    border-radius: 3px;
+    height: 20px;
     margin: 0 auto;
-    background-color: white;
-    border: .5px solid #EEE;
-    background-image: linear-gradient(to right, #F2B279, #8C3A1C);
+    padding-top: 10px;
+    /* background-color: #23394A; */
+    background: linear-gradient(to right, #65A5D6, #23394A);
+    background-size: 200% 100%;
+    border-radius: 2px;
+    transform-origin: left center;
 }
 
 @keyframes load-question {
-    0% {
-        transform: scaleX(1);
+    0% { 
+        /* width: 0px; */
+        transform: scaleX(0);
+        /* background-position: left bottom; */
     }
-
-    100% {
-        transform: scaleX(2);
+    /* 25% { width: 50px }
+    50% { width: 100px }
+    75% { width: 150px } */
+    100% { 
+        transform: scaleX(1);
+        /* width: 200px; */
+        /* background-position: right bottom; */
     }
 }
 

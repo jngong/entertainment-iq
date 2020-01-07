@@ -13,6 +13,7 @@ let questionContainer = document.querySelector('.question-container')
 let introParagraph = document.querySelector('header > p')
 let scoreContainer = document.querySelector('.score-container')
 let resetButton = document.querySelector('#reset-game')
+let loadingBar = document.querySelector('.loading-bar')
 
 // Event listeners
 filmButton.addEventListener('click', filmQuestions)
@@ -150,6 +151,7 @@ function playGame() {
     }
 
     function nextQuestion() {
+        loadingBar.style.display = 'none'
         answerContainer.innerHTML = ''
         message.innerHTML = ''     
         if (triviaQuestions.length > 0) {
@@ -186,7 +188,6 @@ function playGame() {
             let correctAnswer = triviaQuestions[i].correct_answer
     
             if (userAnswer == correctAnswer) {
-                message.innerHTML = `Nice job! You're correct.`
                 this.style.backgroundColor = '#2D8031'
                 this.style.color = '#ffffff'
                 this.style.boxShadow = '2px 6px #47CC4E'
@@ -197,10 +198,12 @@ function playGame() {
                 
                 triviaQuestions.pop();
 
+                setTimeout(function() {
+                    message.innerHTML = `Nice job! You're correct.`
+                }, 1000) 
+                
                 console.log(`Correct. User clicked: ${userAnswer}. Correct answer: ${correctAnswer}.`)
             } else {
-                message.innerHTML = `Sorry. Wrong answer.`
-
                 this.style.backgroundColor = '#BD201C'
                 this.style.color = '#ffffff'
                 this.style.boxShadow = '2px 6px #E82623'
@@ -209,12 +212,14 @@ function playGame() {
                 let correctButton = document.querySelector('.correct-answer')
                 
                 setTimeout(showCorrect, 1000)
+                setTimeout(() => {
+                    message.innerHTML = `Sorry. Wrong answer.`
+                }, 2000)
                 function showCorrect(){ 
                     correctButton.style.backgroundColor = '#2D8031'
                     correctButton.style.color = '#ffffff'
                     correctButton.style.transform = 'scale(1.1)'
                     correctButton.style.boxShadow = '2px 6px #47CC4E'
-
                 }
                 
                 questionsPlayed++
@@ -223,16 +228,21 @@ function playGame() {
                 triviaQuestions.pop();
 
                 console.log(`Wrong. User clicked: ${userAnswer}. Correct answer: ${correctAnswer}.`)
+
+                // loadingBar.style.animationDelay = '2s'
+
             }
             console.log(`Current score: ${userScore} / ${questionsPlayed}, Qs remaining: ${questionsRemaining}`);
 
             displayScore();
             setTimeout(nextQuestion, 5000);
 
-            let loadingBar = document.querySelector('.loading-bar')
             loadingBar.style.display = 'block'
-            loadingBar.style.animationName = 'load-question'
-            loadingBar.style.animationDuration = '5s'
+            loadingBar.style.animation = '3s linear 2s load-question'
+            // loadingBar.style.animationName = 'load-question'
+            // loadingBar.style.animationDuration = '3s'
+            // loadingBar.style.timingFunction = 'ease-in'
+
         }
 
         function displayScore() {
