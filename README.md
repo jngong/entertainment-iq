@@ -101,23 +101,28 @@ You are **responsible** for scheduling time with your squad to seek approval for
 | Track Score | H | 4hrs | 30 min | 30 min |
 | Finish Game & Display Result | H | 3hrs | 30 min | 30 min |
 | Reset Game Function | M | 3hrs | 30 min | 30 min |
-| Additional Styling Effects (e.g. Animation, Responsive Media Queries) | L | 2hrs | tbd | tbd |
+| Additional Styling Effects (e.g. Animation, Responsive Media Queries) | L | 2hrs | 6hrs | 6hrs |
 | Total | H | 25hrs| tbd | tbd |
 
 
 ## Code Snippet
 
-Pending:
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
+Effectively implemented code to randomize the position of values in an array for multiple choice questions. Proud of implementing it from Google research results. Oftentimes, I would get overwhelmed and confused by the results I find but I'm getting better at sifting through what works vs. doesn't.  
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+        if (triviaQuestions[i].type === 'multiple') {
+            let randomizedAnswers = []
+            while(potentialAnswers.length !== 0) {
+                let randomIndex = Math.floor(Math.random() * potentialAnswers.length);
+                randomizedAnswers.push(potentialAnswers[randomIndex]);
+                potentialAnswers.splice(randomIndex, 1)
+            }            
+            triviaQuestions[i].all_answers = randomizedAnswers; 
+        } else if (triviaQuestions[i].type === 'boolean') {
+            triviaQuestions[i].all_answers = ['True', 'False']
+        }
+
 ```
 
 ## Change Log
- Pending:
- Use this section to document what changes were made and the reasoning behind those changes.  
-
-In the timeframe list, tasks 4 and 5 overlapped so the actual time isn't fully accurate. I decided to leave the random order to later, as I wanted to focus on getting the game ready first.
+ Finished MVP early, so added visual cues and animations with extra time available.
