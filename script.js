@@ -200,6 +200,8 @@ function playGame() {
 
                 setTimeout(function() {
                     message.innerHTML = `Nice job! You're correct.`
+                    loadingBar.style.display = 'block'
+                    loadingBar.style.animation = '4s linear 0s load-question'
                 }, 1000) 
                 
                 console.log(`Correct. User clicked: ${userAnswer}. Correct answer: ${correctAnswer}.`)
@@ -214,6 +216,8 @@ function playGame() {
                 setTimeout(showCorrect, 1000)
                 setTimeout(() => {
                     message.innerHTML = `Sorry. Wrong answer.`
+                    loadingBar.style.display = 'block'
+                    loadingBar.style.animation = '3s linear 0s load-question'
                 }, 2000)
                 function showCorrect(){ 
                     correctButton.style.backgroundColor = '#2D8031'
@@ -237,8 +241,8 @@ function playGame() {
             displayScore();
             setTimeout(nextQuestion, 5000);
 
-            loadingBar.style.display = 'block'
-            loadingBar.style.animation = '3s linear 2s load-question'
+            // loadingBar.style.display = 'block'
+            // loadingBar.style.animation = '3s linear 2s load-question'
             // loadingBar.style.animationName = 'load-question'
             // loadingBar.style.animationDuration = '3s'
             // loadingBar.style.timingFunction = 'ease-in'

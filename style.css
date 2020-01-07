@@ -156,17 +156,17 @@ button {
     height: 20px;
     margin: 0 auto;
     padding-top: 10px;
-    /* background-color: #23394A; */
-    background: linear-gradient(to right, #65A5D6, #23394A);
+    background-color: #fff;
     background-size: 200% 100%;
-    border-radius: 2px;
+    border-radius: 3px;
     transform-origin: left center;
 }
 
 @keyframes load-question {
     0% { 
-        /* width: 0px; */
         transform: scaleX(0);
+        background: linear-gradient(to right, #65A5D6, #23394A);
+        /* width: 0px; */
         /* background-position: left bottom; */
     }
     /* 25% { width: 50px }
@@ -174,6 +174,7 @@ button {
     75% { width: 150px } */
     100% { 
         transform: scaleX(1);
+        background: linear-gradient(to right, #65A5D6, #23394A);
         /* width: 200px; */
         /* background-position: right bottom; */
     }
