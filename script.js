@@ -97,8 +97,19 @@ function playGame() {
         // Loop through each object to push the correct_answer value and the incorrect_answer values into a new property for that object.
     for (let i = 0; i < triviaQuestions.length; i++) {
         
+        //change HTML entities to plain text to compare correct answers. Solution sourced from: https://gomakethings.com/decoding-html-entities-with-vanilla-javascript/
+        let decodeHTML = function(html) {
+            var txt = document.createElement('textarea');
+            txt.innerHTML = html;
+            return txt.value;
+        };
+
+        let decodedAnswer = decodeHTML(`${triviaQuestions[i].correct_answer}`);
+        console.log(`${decodedAnswer}`)
+        triviaQuestions[i].correct_answer = decodedAnswer
+
         let potentialAnswers = [];
-        potentialAnswers.push(triviaQuestions[i].correct_answer)
+        potentialAnswers.push(decodedAnswer)
         triviaQuestions[i].incorrect_answers.forEach(element => {
             potentialAnswers.push(element)
         });
