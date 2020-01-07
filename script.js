@@ -13,7 +13,7 @@ let questionContainer = document.querySelector('.question-container')
 let introParagraph = document.querySelector('header > p')
 let scoreContainer = document.querySelector('.score-container')
 let resetButton = document.querySelector('#reset-game')
-let loadingBar = document.querySelector('.loading-bar')
+let loadingBar = document.querySelector('#loading-bar')
 
 // Event listeners
 filmButton.addEventListener('click', filmQuestions)
@@ -191,6 +191,7 @@ function playGame() {
                 this.style.backgroundColor = '#2D8031'
                 this.style.color = '#ffffff'
                 this.style.boxShadow = '2px 6px #47CC4E'
+                // message.innerHTML = `Nice job! You're correct.`
                 
                 userScore++
                 questionsPlayed++
@@ -199,26 +200,24 @@ function playGame() {
                 triviaQuestions.pop();
 
                 setTimeout(function() {
-                    message.innerHTML = `Nice job! You're correct.`
                     loadingBar.style.display = 'block'
-                    loadingBar.style.animation = '4s linear 0s load-question'
-                }, 1000) 
+                    loadingBar.style.animation = '4.5s linear 0s load-question'
+                }, 500) 
                 
                 console.log(`Correct. User clicked: ${userAnswer}. Correct answer: ${correctAnswer}.`)
             } else {
                 this.style.backgroundColor = '#BD201C'
                 this.style.color = '#ffffff'
                 this.style.boxShadow = '2px 6px #E82623'
-
+                // message.innerHTML = `Sorry. Wrong answer.`
                 
                 let correctButton = document.querySelector('.correct-answer')
                 
                 setTimeout(showCorrect, 1000)
                 setTimeout(() => {
-                    message.innerHTML = `Sorry. Wrong answer.`
                     loadingBar.style.display = 'block'
-                    loadingBar.style.animation = '3s linear 0s load-question'
-                }, 2000)
+                    loadingBar.style.animation = '4s linear 0s load-question'
+                }, 1500)
                 function showCorrect(){ 
                     correctButton.style.backgroundColor = '#2D8031'
                     correctButton.style.color = '#ffffff'

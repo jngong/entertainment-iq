@@ -9,6 +9,7 @@ body {
     background-image: url('images/brick-wall-background.jpg');
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     max-width: 100vw;
@@ -115,6 +116,7 @@ button {
 #answer-container {
     display: flex;
     flex-flow: column wrap;
+    justify-content: center;
     font-family: 'Mukta Malar', sans-serif;
     margin-bottom: 2px;
 }
@@ -150,12 +152,11 @@ button {
     font-size: 1.5rem;
 }
 
-.loading-bar {
+#loading-bar {
     display: none;
     width: 200px;
-    height: 20px;
-    margin: 0 auto;
-    padding-top: 10px;
+    height: 10px;
+    margin: 10px auto;
     background-color: #fff;
     background-size: 200% 100%;
     border-radius: 3px;
