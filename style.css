@@ -151,13 +151,24 @@ button {
 }
 
 .loading-bar {
-    width: 30%;
+    display: none;
+    width: 200px;
     height: 15px;
     border-radius: 3px;
     margin: 0 auto;
-    background-image: linear-gradient(to right, #F2B279, #8C3A1C);
+    background-color: white;
     border: .5px solid #EEE;
-    transition: background-image 3s ease-in;
+    background-image: linear-gradient(to right, #F2B279, #8C3A1C);
+}
+
+@keyframes load-question {
+    0% {
+        transform: scaleX(1);
+    }
+
+    100% {
+        transform: scaleX(2);
+    }
 }
 
 /* Score Styles */
@@ -178,7 +189,7 @@ button {
 /* Reset Button Styles */
 #reset-game {
     width: 60%;
-    margin: 1.5rem auto;
+    margin: .5rem auto;
     line-height: 2.5rem;
     background-color: #000;
     color: #fff;
@@ -243,7 +254,7 @@ footer a:hover {
         flex-flow: row wrap;
         width: 80%;
         margin: 0 auto;
-        padding: 20px 0;
+        /* padding: 20px 0; */
     }
 
     .category-container h2 {
@@ -282,6 +293,7 @@ footer a:hover {
         font-size: 4rem;
         letter-spacing: .2rem;
         text-shadow: 5px 2px 0 #E0E0E0;
+        margin-top: 0;
     }
     
     header p {

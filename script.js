@@ -227,7 +227,12 @@ function playGame() {
             console.log(`Current score: ${userScore} / ${questionsPlayed}, Qs remaining: ${questionsRemaining}`);
 
             displayScore();
-            setTimeout(nextQuestion, 3000); 
+            setTimeout(nextQuestion, 5000);
+
+            let loadingBar = document.querySelector('.loading-bar')
+            loadingBar.style.display = 'block'
+            loadingBar.style.animationName = 'load-question'
+            loadingBar.style.animationDuration = '5s'
         }
 
         function displayScore() {
