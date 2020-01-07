@@ -62,7 +62,7 @@ async function musicQuestions() {
 // first step is to hide category div and replace w/ question div
 function hideCategories() {
     categoryContainer.style.display = 'none'
-    questionContainer.style.display = 'block'
+    questionContainer.style.display = 'flex'
     introParagraph.style.display = 'none'
     scoreContainer.style.display = 'block'
     playGame();
@@ -105,7 +105,7 @@ function playGame() {
         };
 
         let decodedAnswer = decodeHTML(`${triviaQuestions[i].correct_answer}`);
-        console.log(`${decodedAnswer}`)
+        console.log(`Q${i + 1}: ${decodedAnswer}`)
         triviaQuestions[i].correct_answer = decodedAnswer
 
         let potentialAnswers = [];
@@ -131,12 +131,18 @@ function playGame() {
         // function to evaluate and display final score. Called in nextQuestion function
     function finalScore() {
         scoreContainer.style.display = 'none'
-        if (userScore >= 9) {
+        if (userScore === 12) { 
+            console.log(`Game over. Score is 12.`)
+            question.innerHTML = `<p>Your final score is ${userScore}.</p><p id='final-message'>Wow, a perfect score! You are the master of obscure facts about ${category}. You win bragging rights :)</p>`
+        } else if (userScore === 0) {
+            console.log(`Game over. Score is 0.`)
+            question.innerHTML = `<p>Your final score is ${userScore}.</p><p id='final-message'>You got them ALL wrong :( Maybe take some time to study up on ${category} and try again some other time.</p>`
+        } else if (userScore >= 9) {
             console.log(`Game over. User is an expert`)
-            question.innerHTML = `<p>Your final score is ${userScore}.</p><p id='final-message'>Congratulations! You are an expert in obscure facts about ${category}. You win bragging rights!</p>`
+            question.innerHTML = `<p>Your final score is ${userScore}.</p><p id='final-message'>Congratulations! You are an expert in obscure facts about ${category}. You win bragging rights :)</p>`
         } else if (userScore <= 4) {
             console.log(`Game over. User is a beginner.`)
-            question.innerHTML = `<p>Your final score is ${userScore}.</p><p id='final-message'>Sorry, you lose. Looks like you need to study up on your ${category} facts and try again later.</p>`
+            question.innerHTML = `<p>Your final score is ${userScore}.</p><p id='final-message'>Better luck next time! Looks like you need to study up on ${category} and try again later.</p>`
         } else {
             console.log(`Game over. User has intermediate knowledge.`)
             question.innerHTML = `<p>Your final score is ${userScore}.</p><p id='final-message'>Nice work! You have some solid knowledge about ${category}, but don't win the top prize.</p>`
@@ -239,9 +245,3 @@ function playGame() {
     nextQuestion();  
     
 }
-
-    // Using a timer to move to the next question (setTimeout), add an animation/transition as a visual indicator of the next question
-
-
-
-
