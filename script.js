@@ -170,8 +170,9 @@ function playGame() {
     
             if (userAnswer == correctAnswer) {
                 message.innerHTML = `Nice job! You're correct.`
-                this.style.backgroundColor = 'green'
-                this.style.color = 'white'
+                this.style.backgroundColor = '#2D8031'
+                this.style.color = '#ffffff'
+                this.style.boxShadow = '2px 6px #47CC4E'
                 
                 userScore++
                 questionsPlayed++
@@ -183,16 +184,20 @@ function playGame() {
             } else {
                 message.innerHTML = `Sorry. Wrong answer.`
 
-                this.style.backgroundColor = 'red'
-                this.style.color = 'white'
+                this.style.backgroundColor = '#BD201C'
+                this.style.color = '#ffffff'
+                this.style.boxShadow = '2px 6px #E82623'
+
                 
                 let correctButton = document.querySelector('.correct-answer')
                 
                 setTimeout(showCorrect, 1000)
                 function showCorrect(){ 
-                    correctButton.style.backgroundColor = 'green'
-                    correctButton.style.color = 'white'
+                    correctButton.style.backgroundColor = '#2D8031'
+                    correctButton.style.color = '#ffffff'
                     correctButton.style.transform = 'scale(1.1)'
+                    correctButton.style.boxShadow = '2px 6px #47CC4E'
+
                 }
                 
                 questionsPlayed++
