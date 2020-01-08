@@ -23,7 +23,6 @@ musicButton.addEventListener('click', musicQuestions)
 resetButton.addEventListener('click', resetGame)
 
 // Async function to retrieve and set a session token
-
 async function retrieveToken() {
     try {
         let response = await axios.get(`https://opentdb.com/api_token.php?command=request`)
@@ -31,6 +30,17 @@ async function retrieveToken() {
         console.log(response)
         console.log(sessionToken)       
         sessionStorage.setItem('token', sessionToken)
+    } catch {
+        console.log(`Error occured: ${err}`);
+        console.log(err.response)
+    }
+}
+
+// Async function to reset a session token
+async function resetToken() {
+    try {
+        await axios.get(`https://opentdb.com/api_token.php?command=reset&token=${sessionToken}`)
+        console.log(`reset token: ${sessionToken}`)
     } catch {
         console.log(`Error occured: ${err}`);
         console.log(err.response)
@@ -59,8 +69,7 @@ async function filmQuestions() {
             category = 'movies'
             hideCategories();
         } else {
-            sessionStorage.clear();
-            await retrieveToken();
+            await resetToken();
             filmQuestions();
         }
 
@@ -73,9 +82,17 @@ async function filmQuestions() {
 async function tvQuestions() {
     try {
         let response = await axios.get(`https://opentdb.com/api.php?amount=12&category=14&&token=${sessionToken}`)
-        triviaQuestions = response.data.results
-        category = 'TV'
-        hideCategories();
+        let responseCode = response.data.response_code
+        console.log(response)
+        console.log(responseCode)
+        if (responseCode !== 4 && responseCode !== 3) {
+            triviaQuestions = response.data.results
+            category = 'TV'
+            hideCategories();
+        } else {
+            await resetToken();
+            tvQuestions();
+        }
     } catch {
         console.log(`Error occured: ${err}`);
             console.log(err.response)
