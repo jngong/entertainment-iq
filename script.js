@@ -23,21 +23,25 @@ musicButton.addEventListener('click', musicQuestions)
 resetButton.addEventListener('click', resetGame)
 
 // Async function to retrieve and set a session token
-
-async function retrieveToken() {
-    try {
-        let response = await axios.get(`https://opentdb.com/api_token.php?command=request`)
-        sessionToken = response.data.token
-        console.log(response)
-        console.log(sessionToken)
-
-        sessionStorage.setItem('sessionToken', sessionToken)
-    } catch {
-        console.log(`Error occured: ${err}`);
-        console.log(err.response)
+if (sessionStorage.getItem('token') === null) {
+    async function retrieveToken() {
+        try {
+            let response = await axios.get(`https://opentdb.com/api_token.php?command=request`)
+            sessionToken = response.data.token
+            console.log(response)
+            console.log(sessionToken)
+            
+            sessionStorage.setItem('token', sessionToken)
+        } catch {
+            console.log(`Error occured: ${err}`);
+            console.log(err.response)
+        }
     }
+    retrieveToken();
+} else {
+    sessionToken = sessionStorage.getItem('token')
+    console.log(sessionToken)
 }
-retrieveToken();
 
 // Async functions to pull API data based on category button clicked.
 async function filmQuestions() {
