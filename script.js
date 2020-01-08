@@ -201,7 +201,7 @@ function playGame() {
 
                 setTimeout(function() {
                     loadingBar.style.display = 'block'
-                    loadingBar.style.animation = '4.5s linear 0s load-question'
+                    loadingBar.style.animation = '3.5s linear 0s load-question'
                 }, 500) 
                 
                 console.log(`Correct. User clicked: ${userAnswer}. Correct answer: ${correctAnswer}.`)
@@ -216,7 +216,7 @@ function playGame() {
                 setTimeout(showCorrect, 1000)
                 setTimeout(() => {
                     loadingBar.style.display = 'block'
-                    loadingBar.style.animation = '4s linear 0s load-question'
+                    loadingBar.style.animation = '3s linear 0s load-question'
                 }, 1500)
                 function showCorrect(){ 
                     correctButton.style.backgroundColor = '#2D8031'
@@ -238,7 +238,7 @@ function playGame() {
             console.log(`Current score: ${userScore} / ${questionsPlayed}, Qs remaining: ${questionsRemaining}`);
 
             displayScore();
-            setTimeout(nextQuestion, 5000);
+            setTimeout(nextQuestion, 4000);
 
             // loadingBar.style.display = 'block'
             // loadingBar.style.animation = '3s linear 2s load-question'
