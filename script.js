@@ -23,20 +23,22 @@ musicButton.addEventListener('click', musicQuestions)
 resetButton.addEventListener('click', resetGame)
 
 // Async function to retrieve and set a session token
-if (sessionStorage.getItem('token') === null) {
-    async function retrieveToken() {
-        try {
-            let response = await axios.get(`https://opentdb.com/api_token.php?command=request`)
-            sessionToken = response.data.token
-            console.log(response)
-            console.log(sessionToken)
-            
-            sessionStorage.setItem('token', sessionToken)
-        } catch {
-            console.log(`Error occured: ${err}`);
-            console.log(err.response)
-        }
+
+async function retrieveToken() {
+    try {
+        let response = await axios.get(`https://opentdb.com/api_token.php?command=request`)
+        sessionToken = response.data.token
+        console.log(response)
+        console.log(sessionToken)       
+        sessionStorage.setItem('token', sessionToken)
+    } catch {
+        console.log(`Error occured: ${err}`);
+        console.log(err.response)
     }
+}
+
+// When browser is refreshed, check if there is a sessionToken stored. 
+if (sessionStorage.getItem('token') === null) {
     retrieveToken();
 } else {
     sessionToken = sessionStorage.getItem('token')
@@ -44,12 +46,24 @@ if (sessionStorage.getItem('token') === null) {
 }
 
 // Async functions to pull API data based on category button clicked.
+
+
 async function filmQuestions() {
     try {
         let response = await axios.get(`https://opentdb.com/api.php?amount=12&category=11&token=${sessionToken}`)
-        triviaQuestions = response.data.results
-        category = 'movies'
-        hideCategories();
+        console.log(response)
+        let responseCode = response.data.response_code
+        console.log(responseCode)
+        if (responseCode !== 4 && responseCode !== 3) {
+            triviaQuestions = response.data.results
+            category = 'movies'
+            hideCategories();
+        } else {
+            sessionStorage.clear();
+            await retrieveToken();
+            filmQuestions();
+        }
+
     } catch {
         console.log(`Error occured: ${err}`);
             console.log(err.response)
