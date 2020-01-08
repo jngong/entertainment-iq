@@ -2,7 +2,8 @@ let userScore = 0; // Track user score
 let questionsPlayed = 0;
 let questionsRemaining = 12; // Track # questions remaining
 let triviaQuestions = []; // Store array of questions from API
-let category
+let category;
+let sessionToken;
 
 // Store DOM elements
 let filmButton = document.querySelector('#film')
@@ -21,10 +22,27 @@ tvButton.addEventListener('click', tvQuestions)
 musicButton.addEventListener('click', musicQuestions)
 resetButton.addEventListener('click', resetGame)
 
+// Async function to retrieve and set a session token
+
+async function retrieveToken() {
+    try {
+        let response = await axios.get(`https://opentdb.com/api_token.php?command=request`)
+        sessionToken = response.data.token
+        console.log(response)
+        console.log(sessionToken)
+
+        sessionStorage.setItem('sessionToken', sessionToken)
+    } catch {
+        console.log(`Error occured: ${err}`);
+        console.log(err.response)
+    }
+}
+retrieveToken();
+
 // Async functions to pull API data based on category button clicked.
 async function filmQuestions() {
     try {
-        let response = await axios.get(`https://opentdb.com/api.php?amount=12&category=11`)
+        let response = await axios.get(`https://opentdb.com/api.php?amount=12&category=11&token=${sessionToken}`)
         triviaQuestions = response.data.results
         category = 'movies'
         hideCategories();
@@ -36,7 +54,7 @@ async function filmQuestions() {
 
 async function tvQuestions() {
     try {
-        let response = await axios.get(`https://opentdb.com/api.php?amount=12&category=14`)
+        let response = await axios.get(`https://opentdb.com/api.php?amount=12&category=14&&token=${sessionToken}`)
         triviaQuestions = response.data.results
         category = 'TV'
         hideCategories();
@@ -48,7 +66,7 @@ async function tvQuestions() {
 
 async function musicQuestions() {
     try {
-        let response = await axios.get(`https://opentdb.com/api.php?amount=12&category=12`)
+        let response = await axios.get(`https://opentdb.com/api.php?amount=12&category=12&token=${sessionToken}`)
         triviaQuestions = response.data.results
         category = 'music'
         hideCategories();

@@ -97,9 +97,9 @@ You are **responsible** for scheduling time with your squad to seek approval for
 | Basic CSS Styles | M | 2hrs| 2hrs | 2hrs |
 | Category Buttons | M | 2hrs | 1hr | 1hr |
 | API to Display Question and Randomize Position of Answer Choices | H | 4hrs | 4hrs | 4hrs |
-| Record User Answers - Evaluate Right/Wrong | H | 4hrs | 1hr | 1hr |
+| Record User Answers - Evaluate Right/Wrong | H | 4hrs | 2hrs | 2hrs |
 | Track Score | H | 4hrs | 30 min | 30 min |
-| Finish Game & Display Result | H | 3hrs | 30 min | 30 min |
+| Finish Game & Display Result | H | 3hrs | 1hr | 1hr |
 | Reset Game Function | M | 3hrs | 30 min | 30 min |
 | Additional Styling Effects (e.g. Animation, Responsive Media Queries) | L | 2hrs | 6hrs | 6hrs |
 | Total | H | 25hrs| tbd | tbd |
