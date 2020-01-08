@@ -1,3 +1,4 @@
+/* Global scope variables */
 let userScore = 0; // Track user score
 let questionsPlayed = 0;
 let questionsRemaining = 12; // Track # questions remaining
@@ -5,7 +6,7 @@ let triviaQuestions = []; // Store array of questions from API
 let category;
 let sessionToken;
 
-// Store DOM elements
+/* Store DOM elements */
 let filmButton = document.querySelector('#film')
 let tvButton = document.querySelector('#tv')
 let musicButton = document.querySelector('#music')
@@ -16,12 +17,13 @@ let scoreContainer = document.querySelector('.score-container')
 let resetButton = document.querySelector('#reset-game')
 let loadingBar = document.querySelector('#loading-bar')
 
-// Event listeners
+/* Event listeners */
 filmButton.addEventListener('click', filmQuestions)
 tvButton.addEventListener('click', tvQuestions)
 musicButton.addEventListener('click', musicQuestions)
 resetButton.addEventListener('click', resetGame)
 
+/* Async Functions to call API */
 // Async function to retrieve and set a session token
 async function retrieveToken() {
     try {
@@ -47,17 +49,7 @@ async function resetToken() {
     }
 }
 
-// When browser is refreshed, check if there is a sessionToken stored. 
-if (sessionStorage.getItem('token') === null) {
-    retrieveToken();
-} else {
-    sessionToken = sessionStorage.getItem('token')
-    console.log(sessionToken)
-}
-
 // Async functions to pull API data based on category button clicked.
-
-
 async function filmQuestions() {
     try {
         let response = await axios.get(`https://opentdb.com/api.php?amount=12&category=11&token=${sessionToken}`)
@@ -102,9 +94,19 @@ async function tvQuestions() {
 async function musicQuestions() {
     try {
         let response = await axios.get(`https://opentdb.com/api.php?amount=12&category=12&token=${sessionToken}`)
-        triviaQuestions = response.data.results
-        category = 'music'
-        hideCategories();
+        let responseCode = response.data.response_code
+        console.log(response)
+        console.log(responseCode)
+
+        if (responseCode !== 4 && responseCode !== 3) { 
+            triviaQuestions = response.data.results
+            category = 'music'
+            hideCategories();
+        } else {
+            await resetToken();
+            musicQuestions();
+        }
+
     } catch {
         console.log(`Error occured: ${err}`);
             console.log(err.response)
@@ -112,6 +114,14 @@ async function musicQuestions() {
 }
 
 /* Game play functions */
+
+// When browser is refreshed, check if there is a sessionToken stored. 
+if (sessionStorage.getItem('token') === null) {
+    retrieveToken();
+} else {
+    sessionToken = sessionStorage.getItem('token')
+    console.log(sessionToken)
+}
 
 // first step is to hide category div and replace w/ question div
 function hideCategories() {
