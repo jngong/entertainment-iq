@@ -107,21 +107,38 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 ## Code Snippet
 
-Effectively implemented code to randomize the position of values in an array for multiple choice questions. Proud of implementing it from Google research results. Oftentimes, I would get overwhelmed and confused by the results I find but I'm getting better at sifting through what works vs. doesn't.  
+Created a small animation to appear between questions that operates as a loading bar. Was my first time creating and implementing a CSS animation.
 
+**CSS**
 ```
-        if (triviaQuestions[i].type === 'multiple') {
-            let randomizedAnswers = []
-            while(potentialAnswers.length !== 0) {
-                let randomIndex = Math.floor(Math.random() * potentialAnswers.length);
-                randomizedAnswers.push(potentialAnswers[randomIndex]);
-                potentialAnswers.splice(randomIndex, 1)
-            }            
-            triviaQuestions[i].all_answers = randomizedAnswers; 
-        } else if (triviaQuestions[i].type === 'boolean') {
-            triviaQuestions[i].all_answers = ['True', 'False']
-        }
+#loading-bar {
+    display: none;
+    width: 150px;
+    height: 10px;
+    margin: 10px auto;
+    background-color: #fff;
+    background-size: 200% 100%;
+    border-radius: 3px;
+    transform-origin: left center;
+}
 
+@keyframes load-question {
+    0% { 
+        transform: scaleX(0);
+        background: linear-gradient(to right, #65A5D6, #23394A);
+    }
+    100% { 
+        transform: scaleX(1);
+        background: linear-gradient(to right, #65A5D6, #23394A);
+    }
+}
+```
+**JS**
+```
+setTimeout(() => {
+    loadingBar.style.display = 'block'
+    loadingBar.style.animation = '3s linear 0s load-question'
+}, 1500)
 ```
 
 ## Change Log
