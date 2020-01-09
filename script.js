@@ -138,8 +138,8 @@ if (sessionStorage.getItem('token') === null) {
 // first step is to hide category div and replace w/ question div
 function hideCategories() {
     categoryContainer.style.display = 'none'
-    questionContainer.style.display = 'flex'
     introParagraph.style.display = 'none'
+    questionContainer.style.display = 'flex'
     scoreContainer.style.display = 'block'
     playGame();
 }
@@ -306,21 +306,11 @@ function playGame() {
                 triviaQuestions.pop();
 
                 console.log(`Wrong. User clicked: ${userAnswer}. Correct answer: ${correctAnswer}.`)
-
-                // loadingBar.style.animationDelay = '2s'
-
             }
             console.log(`Current score: ${userScore} / ${questionsPlayed}, Qs remaining: ${questionsRemaining}`);
 
             displayScore();
             setTimeout(nextQuestion, 4000);
-
-            // loadingBar.style.display = 'block'
-            // loadingBar.style.animation = '3s linear 2s load-question'
-            // loadingBar.style.animationName = 'load-question'
-            // loadingBar.style.animationDuration = '3s'
-            // loadingBar.style.timingFunction = 'ease-in'
-
         }
 
         function displayScore() {
