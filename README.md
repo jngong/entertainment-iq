@@ -1,8 +1,6 @@
 # Project Overview
 
-## Project Name
-
-Entertainment IQ
+## Entertainment IQ
 
 https://pages.git.generalassemb.ly/jngong/entertainment-iq-trivia/
 
