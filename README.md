@@ -3,6 +3,7 @@
 ## Project Name
 
 Entertainment IQ
+https://pages.git.generalassemb.ly/jngong/entertainment-iq-trivia/
 
 ## Project Description
 
@@ -71,10 +72,6 @@ https://wireframe.cc/pro/pp/84310c826302744
 
 ## Project Schedule
 
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
-
 |  Day | Deliverable | Status
 |---|---| ---|
 |Thursday, 1/2| Project plan; Project approval | Completed
@@ -101,8 +98,8 @@ You are **responsible** for scheduling time with your squad to seek approval for
 | Track Score | H | 4hrs | 30 min | 30 min |
 | Finish Game & Display Result | H | 3hrs | 1hr | 1hr |
 | Reset Game Function | M | 3hrs | 30 min | 30 min |
-| Additional Styling Effects (e.g. Animation, Responsive Media Queries) | L | 2hrs | 6hrs | 6hrs |
-| Total | H | 25hrs| tbd | tbd |
+| Additional Styling Effects (e.g. Animation, Responsive Media Queries) | L | 2hrs | 8hrs | 8hrs |
+| Total | H | 25hrs| 20hrs | 20hrs |
 
 
 ## Code Snippet
