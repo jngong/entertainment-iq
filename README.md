@@ -117,19 +117,17 @@ Created a small animation to appear between questions that operates as a loading
     height: 10px;
     margin: 10px auto;
     background-color: #fff;
-    background-size: 200% 100%;
     border-radius: 3px;
     transform-origin: left center;
+    background: linear-gradient(to right, #65A5D6, #23394A);
 }
 
 @keyframes load-question {
     0% { 
         transform: scaleX(0);
-        background: linear-gradient(to right, #65A5D6, #23394A);
     }
     100% { 
         transform: scaleX(1);
-        background: linear-gradient(to right, #65A5D6, #23394A);
     }
 }
 ```
