@@ -60,8 +60,12 @@ async function filmQuestions() {
             triviaQuestions = response.data.results
             category = 'movies'
             hideCategories();
-        } else {
+        } else if (responseCode == 4) {
             await resetToken();
+            filmQuestions();
+        } else {
+            sessionStorage.clear();
+            await retrieveToken();
             filmQuestions();
         }
 
@@ -81,8 +85,12 @@ async function tvQuestions() {
             triviaQuestions = response.data.results
             category = 'TV'
             hideCategories();
-        } else {
+        } else if (responseCode == 4) {
             await resetToken();
+            tvQuestions();
+        } else {
+            sessionStorage.clear();
+            await retrieveToken();
             tvQuestions();
         }
     } catch {
@@ -102,8 +110,12 @@ async function musicQuestions() {
             triviaQuestions = response.data.results
             category = 'music'
             hideCategories();
-        } else {
+        } else if (responseCode == 4) {
             await resetToken();
+            musicQuestions();
+        } else {
+            sessionStorage.clear();
+            await retrieveToken();
             musicQuestions();
         }
 
