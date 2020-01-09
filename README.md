@@ -3,6 +3,7 @@
 ## Project Name
 
 Entertainment IQ
+
 https://pages.git.generalassemb.ly/jngong/entertainment-iq-trivia/
 
 ## Project Description
@@ -79,7 +80,7 @@ https://wireframe.cc/pro/pp/84310c826302744
 |Monday, 1/6| Code fetching questions from API and record user answers | Completed
 |Tuesday, 1/7| Code functionality to track score; Code functionality to display final result | Completed
 |Wednesday, 1/8| Reset Game Button to restart; Finalize CSS with media queries; Completed MVP  | Completed
-|Thursday, 1/9| Present | Incomplete
+|Thursday, 1/9| Present | Completed
 
 
 ## Priority Matrix
