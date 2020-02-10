@@ -3,6 +3,12 @@
 }
 
 /* Main Styles */
+:root {
+    --main-font-color: #23394A;
+    --button-color-1: #F2B279;
+    
+}
+
 body {
     text-align: center;
     background: url('images/brick-wall-background.jpg') center no-repeat fixed rgba(216, 128, 78, 1);
