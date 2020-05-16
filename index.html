@@ -1,49 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta property="og:title" content="entertainmentIQ Trivia Game">
-    <meta property="og:description" content="Test your knowledge in movies, TV and music.">
-    <meta property="og:image" content="https://pages.git.generalassemb.ly/jngong/entertainment-iq-trivia/images/entertainment-iq-image.png">
-    <meta property="og:url" content="https://pages.git.generalassemb.ly/jngong/entertainment-iq-trivia">
-    <meta name="twitter:card" content="entertainmentIQ Trivia Game">
-    <link href="https://fonts.googleapis.com/css?family=Mukta+Malar:600,800|Open+Sans:400,700&display=swap" rel="stylesheet">
-    <link rel = "icon" href="favicon.ico" type = "image/x-icon"> 
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta property="og:title" content="entertainmentIQ Trivia Game" />
+    <meta
+      property="og:description"
+      content="Test your knowledge in movies, TV and music."
+    />
+    <meta
+      property="og:image"
+      content="https://pages.git.generalassemb.ly/jngong/entertainment-iq-trivia/images/entertainment-iq-image.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://pages.git.generalassemb.ly/jngong/entertainment-iq-trivia"
+    />
+    <meta name="twitter:card" content="entertainmentIQ Trivia Game" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Mukta+Malar:600,800|Open+Sans:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
     <title>entertainmentIQ | Trivia Game</title>
-</head>
-<body>
-    <div class='main-container'>
-        <header>
-            <h1>entertainmentIQ</h1>
-            <p>Welcome to entertainmentIQ, the trivia game that tests your knowledge in popular entertainment. Choose a category to get started. Good luck!</p>
-        </header>
-        <div class='category-container'>
-            <h2>Choose A Category</h2>
-            <button class='category' id='film'>Film</button>
-            <button class='category' id='tv'>Television</button>
-            <button class='category' id='music'>Music</button>
-        </div>
-        <div class='score-container'>
-            <h2>Your Score</h2>
-            <p id='score'>0 / 0</p>
-            <p><span id='questions-remaining'>12</span> questions remaining</p>
-        </div>
-        <div class='question-container'>
-            <div id='question-message'></div>
-            <div id='question'></div>
-            <div id='answer-container'></div>
-            <div id='loading-bar'></div>
-        </div>
-    </div> <!-- end of main-container div -->
-    <button id='reset-game'>Start New Game</button>
+  </head>
+  <body>
+    <div class="main-container">
+      <header>
+        <h1>entertainmentIQ</h1>
+        <p>
+          Welcome to entertainmentIQ, the trivia game that tests your knowledge
+          in popular entertainment. Choose a category to get started. Good luck!
+        </p>
+      </header>
+      <div class="category-container">
+        <h2>Choose A Category</h2>
+        <button class="category" id="film">Film</button>
+        <button class="category" id="tv">Television</button>
+        <button class="category" id="music">Music</button>
+      </div>
+      <div class="score-container">
+        <h2>Your Score</h2>
+        <p id="score">0 / 0</p>
+        <p><span id="questions-remaining">12</span> questions remaining</p>
+      </div>
+      <div class="question-container">
+        <div id="question-message"></div>
+        <div id="question"></div>
+        <div id="answer-container"></div>
+        <div id="loading-bar"></div>
+      </div>
+    </div>
+    <!-- end of main-container div -->
+    <button id="reset-game">Start New Game</button>
     <footer>
-        <hr>
-        <p>Web Design and Development by Jennifer Gong. Data sourced from <a href="https://opentdb.com/" target="blank">Open Trivia Database</a>. Images sourced from  <a href="https://www.pexels.com/" target="blank">Pexels</a>.</p>
+      <hr />
+      <p>
+        Web Design and Development by
+        <a href="https://jennifergong.com/" target="blank">Jennifer Gong</a>
+        (2020). | Data sourced from
+        <a href="https://opentdb.com/" target="blank">Open Trivia Database</a>.
+        | Images sourced from
+        <a href="https://www.pexels.com/" target="blank">Pexels</a>.
+      </p>
     </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

@@ -219,17 +219,18 @@ hr {
 footer {
   width: 100vw;
   margin: 1rem auto;
+  max-width: 90vw;
 }
 
 footer p {
-  background-color: #fff;
-  max-width: 90vw;
   margin: 0 auto;
+  background-color: #fff;
   padding: 4px;
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.5px;
-  font-style: italic;
+  line-height: 1rem;
+  /* font-style: italic; */
 }
 
 footer a {
@@ -347,5 +348,6 @@ footer a:hover {
   footer p {
     max-width: 800px;
     line-height: 1.1rem;
+    padding: 14px 4px;
   }
 }
