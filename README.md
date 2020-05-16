@@ -10,7 +10,7 @@ A one-player trivia game that allows users to test their entertainment knowledge
 
 ## API and Data Sample
 
-[Open Trivia DB](https://opentdb.com/api_config.php)
+[Open Trivia Database](https://opentdb.com/api_config.php)
 
 ### API Data Sample
 
@@ -73,17 +73,12 @@ https://wireframe.cc/pro/pp/84310c826302744
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Thursday, 1/2| Project plan; Project approval | Completed
-|Friday, 1/3| Pseudocode functionality; Core App Structure (HTML & CSS) | Completed
-|Monday, 1/6| Code fetching questions from API and record user answers | Completed
-|Tuesday, 1/7| Code functionality to track score; Code functionality to display final result | Completed
-|Wednesday, 1/8| Reset Game Button to restart; Finalize CSS with media queries; Completed MVP  | Completed
-|Thursday, 1/9| Present | Completed
-
-
-## Priority Matrix
-
-![Priority Matrix](https://res.cloudinary.com/db0kbxvhr/image/upload/c_scale,w_500/v1577996310/Priority-Matrix_q44ll0.jpg)
+|Thursday, 1/2/20| Project plan; Project approval | Completed
+|Friday, 1/3/20| Pseudocode functionality; Core App Structure (HTML & CSS) | Completed
+|Monday, 1/6/20| Code fetching questions from API and record user answers | Completed
+|Tuesday, 1/7/20| Code functionality to track score; Code functionality to display final result | Completed
+|Wednesday, 1/8/20| Reset Game Button to restart; Finalize CSS with media queries; Completed MVP  | Completed
+|Thursday, 1/9/20| Present | Completed
 
 ## Timeframes
 
@@ -136,4 +131,4 @@ setTimeout(() => {
 ```
 
 ## Change Log
- Finished MVP early, so added visual cues and animations with extra time available.
+- Finished MVP early, so added visual cues and animations with extra time available.
